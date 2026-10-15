@@ -1,0 +1,16 @@
+== s11_extract_cad.py run Thu Oct 15 16:12:02 UTC 2026 ==
+Python 3.10.12
+numpy             2.2.6
+openpyxl          3.1.5
+pandas            2.3.3
+scipy             1.15.3
+statsmodels       0.15.0
+direct hits 46 missing ['rs115478735', 'rs574454081', 'rs72848251', 'rs838146', 'rs72843670', 'rs532754706']
+     target                        via    r2
+rs115478735             proxy rs507666 0.988
+rs574454081                  NOT FOUND   NaN
+ rs72848251 same position, rs115129597 1.000
+   rs838146             proxy rs838147 1.000
+ rs72843670 same position, rs115366102 1.000
+rs532754706                  NOT FOUND   NaN
+outcome rows 50

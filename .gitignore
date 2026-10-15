@@ -1,4 +1,5 @@
 inputs/
+!positive_control/inputs/
 work/ld/
 *.bed
 *.bim

@@ -1,0 +1,58 @@
+[
+ {
+  "outcome": "CAD_Nikpay2015",
+  "desc": "Nikpay 2015 CARDIoGRAMplusC4D 1000G, 60,801 cases / 123,504 controls",
+  "ncase": 60801,
+  "ncontrol": 123504,
+  "neff": 162972.60961992352,
+  "n_instruments_in": 52,
+  "n_used": 49,
+  "missing": 2,
+  "palindromic_removed": 1,
+  "mean_F": 150.47291604577092,
+  "min_F": 29.786454196877806,
+  "R2": 0.06377244651072624,
+  "F_overall": 159.90949452322016,
+  "ivw_b": 0.4566008297800085,
+  "ivw_se": 0.06954535898439501,
+  "ivw_p": 5.1854673110540285e-11,
+  "ivw_or": 1.5786985889971925,
+  "ivw_or_lo": 1.3775332914897398,
+  "ivw_or_hi": 1.8092406552341311,
+  "Q": 276.8885874013218,
+  "Q_df": 48,
+  "Q_p": 6.157549623713663e-34,
+  "egger_int": -0.011475410616707711,
+  "egger_int_se": 0.007156874606918955,
+  "egger_int_p": 0.11554393082204815,
+  "presso_global_p": 0.0001,
+  "presso_outliers": [
+   "rs12740374",
+   "rs115478735",
+   "rs3777411",
+   "rs653178",
+   "rs1500188"
+  ],
+  "presso_corr_or": 1.540005140343536,
+  "presso_corr_p": 9.23104830344912e-17,
+  "presso_corr_n": 44,
+  "steiger_removed": [
+   "rs653178"
+  ],
+  "steiger_ivw_or": 1.602088127955153,
+  "steiger_ivw_p": 9.317055303764116e-14,
+  "mde_or_80pct_power": 1.2151131919479803,
+  "mde_or_80pct_power_protective": 0.8229685980092714,
+  "overlap_relative_bias_if_full": 0.006253537371133344,
+  "log": {
+   "missing_in_outcome": [
+    "rs574454081",
+    "rs532754706"
+   ],
+   "palindromic_removed": [
+    "rs1293261"
+   ],
+   "allele_mismatch": []
+  }
+ }
+]

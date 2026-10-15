@@ -1,0 +1,204 @@
+Run started: 2026-10-16 00:25:59 CST 
+R version 4.4.3 (2025-02-28) 
+MRPRESSO version: 1.0 
+TwoSampleMR version: 0.6.22 
+No phenotype name specified, defaulting to 'exposure'.
+No phenotype name specified, defaulting to 'outcome'.
+Harmonising Remnant cholesterol (RC) and CAD (Nikpay 2015) (CAD)
+Removing the following SNPs for being palindromic with intermediate allele frequencies:
+rs1293261
+Harmonised SNPs kept for MR: 49  of  50 
+Analysing 'RC' on 'CAD'
+                                                     method nsnp         b         se         pval       OR    OR_lo
+1 Inverse variance weighted (multiplicative random effects)   49 0.4566008 0.06954536 5.185467e-11 1.578699 1.377530
+2                                                  MR Egger   49 0.6263875 0.12608001 9.367188e-06 1.870840 1.461218
+3                                           Weighted median   49 0.3888146 0.05643447 5.592384e-12 1.475231 1.320754
+4                                               Simple mode   49 0.3420727 0.13130074 1.218756e-02 1.407863 1.088416
+5                                             Weighted mode   49 0.3317981 0.06941569 1.698850e-05 1.393471 1.216215
+     OR_hi
+1 1.809245
+2 2.395290
+3 1.647776
+4 1.821066
+5 1.596562
+  id.exposure id.outcome           outcome            exposure                    method        Q Q_df       Q_pval
+1          RC        CAD CAD (Nikpay 2015) Remnant cholesterol                  MR Egger 262.5281   47 1.006008e-31
+2          RC        CAD CAD (Nikpay 2015) Remnant cholesterol Inverse variance weighted 276.8886   48 6.157550e-34
+  id.exposure id.outcome           outcome            exposure egger_intercept          se      pval
+1          RC        CAD CAD (Nikpay 2015) Remnant cholesterol     -0.01147541 0.007156875 0.1155439
+$`Main MR results`
+       Exposure       MR Analysis Causal Estimate         Sd   T-stat      P-value
+1 beta.exposure               Raw       0.4566008 0.06954536 6.565511 3.412148e-08
+2 beta.exposure Outlier-corrected       0.3999219 0.05175797 7.726769 1.351858e-09
+
+$`MR-PRESSO results`
+$`MR-PRESSO results`$`Global Test`
+$`MR-PRESSO results`$`Global Test`$RSSobs
+[1] 290.714
+
+$`MR-PRESSO results`$`Global Test`$Pvalue
+[1] "<1e-04"
+
+
+$`MR-PRESSO results`$`Outlier Test`
+         RSSobs  Pvalue
+1  3.387135e-08       1
+2  3.465763e-05       1
+3  7.474480e-05       1
+4  2.512852e-04       1
+5  2.786749e-03 <0.0049
+6  1.400766e-02       1
+7  7.752806e-04   0.245
+8  9.908410e-07       1
+9  3.420857e-03  0.0147
+10 3.004817e-05       1
+11 5.475550e-03 <0.0049
+12 5.784039e-04       1
+13 9.221102e-05       1
+15 2.454526e-03 <0.0049
+16 1.069723e-03  0.0735
+17 7.181817e-03  0.8134
+18 1.800103e-04       1
+19 1.221901e-05       1
+20 7.332212e-04  0.3381
+21 6.234282e-04       1
+22 3.387372e-04       1
+23 4.505460e-04       1
+24 2.226722e-04       1
+25 2.324531e-03 <0.0049
+26 8.853002e-04  0.2695
+27 5.653929e-04  0.9653
+28 3.650874e-05       1
+29 3.559509e-04       1
+30 1.552660e-03  0.1029
+31 8.554782e-05       1
+32 1.017086e-06       1
+33 7.464657e-06       1
+34 4.695233e-05       1
+35 5.791934e-03 <0.0049
+36 1.373214e-04       1
+37 1.219749e-05       1
+38 3.042056e-04       1
+39 3.046086e-05       1
+40 1.100273e-03       1
+41 4.200330e-07       1
+42 1.977010e-04       1
+43 2.944033e-04       1
+44 2.276179e-04       1
+45 2.793931e-03       1
+46 2.702822e-02  0.0686
+47 1.154402e-04       1
+48 2.588641e-04       1
+49 9.305610e-05       1
+50 3.242379e-04       1
+
+$`MR-PRESSO results`$`Distortion Test`
+$`MR-PRESSO results`$`Distortion Test`$`Outliers Indices`
+[1]  5  9 11 14 24 34
+
+$`MR-PRESSO results`$`Distortion Test`$`Distortion Coefficient`
+beta.exposure 
+      14.1725 
+
+$`MR-PRESSO results`$`Distortion Test`$Pvalue
+[1] 0.175
+
+
+
+       Exposure       MR Analysis Causal Estimate         Sd   T-stat      P-value
+1 beta.exposure               Raw       0.4566008 0.06954536 6.565511 3.412148e-08
+2 beta.exposure Outlier-corrected       0.3999219 0.05175797 7.726769 1.351858e-09
+$RSSobs
+[1] 290.714
+
+$Pvalue
+[1] "<1e-04"
+
+         RSSobs  Pvalue
+1  3.387135e-08       1
+2  3.465763e-05       1
+3  7.474480e-05       1
+4  2.512852e-04       1
+5  2.786749e-03 <0.0049
+6  1.400766e-02       1
+7  7.752806e-04   0.245
+8  9.908410e-07       1
+9  3.420857e-03  0.0147
+10 3.004817e-05       1
+11 5.475550e-03 <0.0049
+12 5.784039e-04       1
+13 9.221102e-05       1
+15 2.454526e-03 <0.0049
+16 1.069723e-03  0.0735
+17 7.181817e-03  0.8134
+18 1.800103e-04       1
+19 1.221901e-05       1
+20 7.332212e-04  0.3381
+21 6.234282e-04       1
+22 3.387372e-04       1
+23 4.505460e-04       1
+24 2.226722e-04       1
+25 2.324531e-03 <0.0049
+26 8.853002e-04  0.2695
+27 5.653929e-04  0.9653
+28 3.650874e-05       1
+29 3.559509e-04       1
+30 1.552660e-03  0.1029
+31 8.554782e-05       1
+32 1.017086e-06       1
+33 7.464657e-06       1
+34 4.695233e-05       1
+35 5.791934e-03 <0.0049
+36 1.373214e-04       1
+37 1.219749e-05       1
+38 3.042056e-04       1
+39 3.046086e-05       1
+40 1.100273e-03       1
+41 4.200330e-07       1
+42 1.977010e-04       1
+43 2.944033e-04       1
+44 2.276179e-04       1
+45 2.793931e-03       1
+46 2.702822e-02  0.0686
+47 1.154402e-04       1
+48 2.588641e-04       1
+49 9.305610e-05       1
+50 3.242379e-04       1
+Distortion:
+$`Outliers Indices`
+[1]  5  9 11 14 24 34
+
+$`Distortion Coefficient`
+beta.exposure 
+      14.1725 
+
+$Pvalue
+[1] 0.175
+
+Outlier SNPs: rs115478735, rs12151108, rs12740374, rs1500188, rs3777411, rs653178 
+
+==== sessionInfo ====
+R version 4.4.3 (2025-02-28)
+Platform: x86_64-apple-darwin20
+Running under: macOS 26.5.2
+
+Matrix products: default
+BLAS:   /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib 
+LAPACK: /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+time zone: Asia/Taipei
+tzcode source: internal
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+[1] MRPRESSO_1.0       TwoSampleMR_0.6.22
+
+loaded via a namespace (and not attached):
+[1] compiler_4.4.3    plyr_1.8.9        magrittr_2.0.4    tools_4.4.3       Rcpp_1.1.0        remotes_2.5.0    
+[7] data.table_1.17.8 jsonlite_2.0.0   
+Run finished: 2026-10-16 00:37:06 CST 

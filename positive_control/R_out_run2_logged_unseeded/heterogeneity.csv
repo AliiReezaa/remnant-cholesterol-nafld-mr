@@ -1,0 +1,3 @@
+"id.exposure","id.outcome","outcome","exposure","method","Q","Q_df","Q_pval"
+"RC","CAD","CAD (Nikpay 2015)","Remnant cholesterol","MR Egger",262.528149849136,47,1.00600781966405e-31
+"RC","CAD","CAD (Nikpay 2015)","Remnant cholesterol","Inverse variance weighted",276.888587401322,48,6.15754962371359e-34

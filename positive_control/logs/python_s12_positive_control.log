@@ -1,0 +1,2 @@
+== s12_positive_control.py run Thu Oct 15 16:12:03 UTC 2026 ==
+CAD_Nikpay2015 | used 49 / 52 | IVW OR 1.579 (1.378-1.809) p=0.000 | Q p=6.2e-34 | Egger int p=0.116 | PRESSO global p=0.0001 outliers=['rs12740374', 'rs115478735', 'rs3777411', 'rs653178', 'rs1500188'] | MDE OR=1.22
