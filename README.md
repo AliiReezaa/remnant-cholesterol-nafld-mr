@@ -2,7 +2,7 @@
 
 Code, harmonised instrument data and results for the study of genetically predicted remnant cholesterol (RC) and non-alcoholic fatty liver disease (NAFLD).
 
-Authors: Alireza Soleymani Taloubaghi, Mahdi Akbarzadeh, Danial Habibi (corresponding).
+Authors: Alireza Soleymani T., Mahdi Akbarzadeh, Danial Habibi (corresponding).
 
 ## Summary of result
 Across three outcome GWAS (Ghodsian GCST90091033; Fairfield GCST90054782; FinnGen R5 finn-b-NAFLD), genetically predicted RC was not associated with NAFLD (IVW OR 1.05, 0.86 to 1.27; 1.00, 0.78 to 1.29; 0.85, 0.56 to 1.28). The study is reported as a null result.
