@@ -196,3 +196,22 @@ box(ax,.61,.12,.37,.34,'Positive control: CAD\nOR 1.58 (1.38-1.81), P = 5e-11\ni
 ax.text(.5,.95,'Genetically higher remnant cholesterol is not associated with NAFLD',ha='center',fontsize=13,fontweight='bold',color=INK)
 save(fig,'graphical_abstract')
 print('ok')
+
+# ---------- Fig S6 positive-control diagnostics ----------
+hc=orient(pd.read_csv(R+'positive_control/python_out/harmonised_CAD_Nikpay2015.tsv',sep='\t')); rc=pd.read_csv(R+'positive_control/python_out/mr_results.tsv',sep='\t'); lc=pd.read_csv(R+'positive_control/python_out/leave_one_out_CAD_Nikpay2015.tsv',sep='\t'); lc=lc[lc.SNP_left_out!='All']
+pcs=json.load(open(R+'positive_control/python_out/summary.json'))[0]; c='#6d28d9'
+r0=rc[(rc.analysis=='all SNPs')]; ivw=r0[r0.method=='Inverse variance weighted'].iloc[0]
+fig,axs=plt.subplots(2,2,figsize=(11,9))
+ax=axs[0,0]; ax.errorbar(hc.bx,hc.by,yerr=1.96*hc.sey,fmt='none',ecolor='#d5d9df',lw=.8); ax.scatter(hc.bx,hc.by,s=24,color=c,edgecolor='white',lw=.4)
+x=np.linspace(0,hc.bx.max()*1.05,10)
+for m,ls,col in [('Inverse variance weighted','-',c),('MR Egger','--',INK),('Weighted median',':',GREY),('Weighted mode','-.','#c2410c')]:
+    r=r0[r0.method==m].iloc[0]; ax.plot(x,(pcs['egger_int'] if m=='MR Egger' else 0)+r.b*x,ls=ls,color=col,lw=1.8,label=m.replace('Inverse variance weighted','IVW'))
+for s_ in pcs['presso_outliers']:
+    q=hc[hc.SNP==s_]
+    if len(q): ax.scatter(q.bx,q.by,s=60,facecolor='none',edgecolor=INK,lw=1.2)
+ax.legend(frameon=False,fontsize=8); ax.set_xlabel('SNP effect on RC'); ax.set_ylabel('SNP effect on CAD (log OR)'); ax.set_title('A  Scatter plot')
+ax=axs[0,1]; prec=1/hc.ratio_se; ax.scatter(hc.ratio,prec,s=24,color=c,edgecolor='white',lw=.4); ax.axvline(ivw.b,color=c,lw=1.8)
+yy=np.linspace(prec.min()*.8,prec.max()*1.02,50); ax.fill_betweenx(yy,ivw.b-1.96/yy,ivw.b+1.96/yy,color=LIGHT,zorder=0); ax.set_xlabel('Wald ratio (log OR per SD)'); ax.set_ylabel('Precision (1/SE)'); ax.set_title('B  Funnel plot')
+ax=axs[1,0]; l=lc.sort_values('b').reset_index(drop=True); ax.errorbar(l.b,np.arange(len(l)),xerr=1.96*l.se,fmt='o',ms=3,color=c,ecolor='#cfd5dc',lw=.8); ax.axvline(ivw.b,color=INK,ls='--',lw=1); ax.axvline(0,color=GREY,lw=.6); ax.set_yticks([]); ax.set_xlabel('IVW log OR with variant omitted'); ax.set_title('C  Leave-one-out')
+ax=axs[1,1]; h2=hc.sort_values('ratio').reset_index(drop=True); ax.errorbar(h2.ratio,np.arange(len(h2)),xerr=1.96*h2.ratio_se,fmt='o',ms=3,color=c,ecolor='#cfd5dc',lw=.8); ax.axvline(ivw.b,color=INK,ls='--',lw=1); ax.axvline(0,color=GREY,lw=.6); ax.set_yticks([]); ax.set_xlabel('Single-variant Wald ratio (log OR)'); ax.set_title('D  Forest plot of single variants')
+fig.suptitle('Positive control: remnant cholesterol and coronary artery disease (Nikpay 2015)',fontweight='bold',fontsize=12); fig.tight_layout(); save(fig,'figS_diagnostics_positive_control')
