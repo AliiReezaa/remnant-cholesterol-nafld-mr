@@ -1,0 +1,181 @@
+Run started: 2026-10-16 00:57:47 CST 
+R version 4.4.3 (2025-02-28) 
+MendelianRandomization 0.10.0 | mr.raps 0.2 | RadialMR 1.2.1 
+
+===== Ghodsian =====
+variants: 48 
+
+Radial IVW
+
+                   Estimate  Std.Error   t value  Pr(>|t|)
+Effect (Mod.2nd) 0.04424815 0.09737217 0.4544229 0.6495245
+Iterative        0.04424815 0.09737217 0.4544229 0.6495245
+Exact (FE)       0.04550279 0.04665026 0.9754027 0.3293605
+Exact (RE)       0.04454003 0.10416611 0.4275866 0.6709049
+
+
+Residual standard error: 2.087 on 47 degrees of freedom
+
+F-statistic: 0.21 on 1 and 47 DF, p-value: 0.652
+Q-Statistic for heterogeneity: 204.7683 on 47 DF , p-value: 1.387997e-21
+
+ Outliers detected 
+Number of iterations = 2
+Radial IVW: estimate 0.04424815 SE 0.09737217 ; outliers: rs157580, rs112875651, rs58542926, rs4665972, rs56325564, rs553427, rs2326077, rs2737245 
+Radial Q: 204.7683 
+
+===== Fairfield =====
+variants: 51 
+
+Radial IVW
+
+                      Estimate  Std.Error      t value  Pr(>|t|)
+Effect (Mod.2nd) -0.0009024686 0.12869164 -0.007012644 0.9944048
+Iterative        -0.0009024686 0.12869164 -0.007012644 0.9944048
+Exact (FE)       -0.0009399590 0.05739517 -0.016376971 0.9869337
+Exact (RE)       -0.0009041538 0.16618942 -0.005440502 0.9956808
+
+
+Residual standard error: 2.242 on 50 degrees of freedom
+
+F-statistic: 0 on 1 and 50 DF, p-value: 0.994
+Q-Statistic for heterogeneity: 251.3738 on 50 DF , p-value: 1.24788e-28
+
+ Outliers detected 
+Number of iterations = 2
+Radial IVW: estimate -0.0009024686 SE 0.1286916 ; outliers: rs157580, rs112875651, rs58542926, rs1883711, rs4665972, rs1169292, rs2326077 
+Radial Q: 251.3738 
+
+===== FinnGen =====
+variants: 48 
+
+Radial IVW
+
+                   Estimate Std.Error    t value  Pr(>|t|)
+Effect (Mod.2nd) -0.1651505 0.2104666 -0.7846871 0.4326370
+Iterative        -0.1651505 0.2104666 -0.7846871 0.4326370
+Exact (FE)       -0.1676250 0.1400497 -1.1968967 0.2313468
+Exact (RE)       -0.1662410 0.2385909 -0.6967617 0.4893839
+
+
+Residual standard error: 1.503 on 47 degrees of freedom
+
+F-statistic: 0.62 on 1 and 47 DF, p-value: 0.437
+Q-Statistic for heterogeneity: 106.1458 on 47 DF , p-value: 1.825048e-06
+
+ Outliers detected 
+Number of iterations = 2
+Radial IVW: estimate -0.1651505 SE 0.2104666 ; outliers: rs112875651, rs58542926, rs6601299 
+Radial Q: 106.1458 
+   dataset                                       method nsnp        OR     OR_lo    OR_hi      pval
+  Ghodsian                           Maximum likelihood   48 1.0465764 0.8623998 1.270086 0.6448127
+  Ghodsian                                     MR-Lasso   48 1.0401453 0.9417155 1.148863 0.4377352
+  Ghodsian                        Contamination mixture   48 1.0616085 0.9415623 1.196960        NA
+  Ghodsian                                 Debiased IVW   48 1.0455577 0.8725957 1.252804 0.6291887
+  Ghodsian IVW (random effects, MendelianRandomization)   48 1.0452436 0.8636401 1.265034 0.6495105
+  Ghodsian                           IVW (fixed effect)   48 1.0452436 0.9539172 1.145313 0.3428189
+  Ghodsian               MR-RAPS (tukey, overdispersed)   48 1.0328636 0.9251894 1.153069 0.5648366
+  Ghodsian               MR-RAPS (huber, overdispersed)   48 1.0218339 0.8827512 1.182830 0.7723192
+  Ghodsian                     IVW, variants with F>=30   47 1.0460487 0.8621571 1.269163 0.6481031
+  Ghodsian                 IVW, variants with MAF>=0.01   48 1.0452436 0.8636401 1.265034 0.6495105
+  Ghodsian   Radial IVW (modified second order weights)   48 1.0452417 0.8636382 1.265032 0.6495245
+ Fairfield                           Maximum likelihood   51 0.9990925 0.7725990 1.291984 0.9944775
+ Fairfield                                     MR-Lasso   51 1.0160254 0.8930705 1.155908 0.8091069
+ Fairfield                        Contamination mixture   51 0.9938819 0.8016070 1.232276        NA
+ Fairfield                                 Debiased IVW   51 0.9990917 0.7860759 1.269832 0.9940736
+ Fairfield IVW (random effects, MendelianRandomization)   51 0.9990979 0.7763607 1.285738 0.9944048
+ Fairfield                           IVW (fixed effect)   51 0.9990979 0.8927962 1.118057 0.9874547
+ Fairfield               MR-RAPS (tukey, overdispersed)   51 1.0102693 0.8815167 1.157827 0.8832190
+ Fairfield               MR-RAPS (huber, overdispersed)   51 0.9914390 0.7979458 1.231852 0.9381333
+ Fairfield                     IVW, variants with F>=30   50 0.9932254 0.7704474 1.280420 0.9581642
+ Fairfield                 IVW, variants with MAF>=0.01   51 0.9990979 0.7763607 1.285738 0.9944048
+ Fairfield   Radial IVW (modified second order weights)   51 0.9990979 0.7763607 1.285738 0.9944048
+   FinnGen                           Maximum likelihood   48 0.8463108 0.5585321 1.282365 0.4312745
+   FinnGen                                     MR-Lasso   48 0.8387376 0.6239965 1.127379 0.2438440
+   FinnGen                        Contamination mixture   48 1.0626400 0.7052213 1.601205        NA
+   FinnGen                                 Debiased IVW   48 0.8467627 0.5721277 1.253229 0.4056629
+   FinnGen IVW (random effects, MendelianRandomization)   48 0.8477608 0.5612062 1.280632 0.4326145
+   FinnGen                           IVW (fixed effect)   48 0.8477608 0.6442788 1.115508 0.2382377
+   FinnGen               MR-RAPS (tukey, overdispersed)   48 0.8680272 0.6438616 1.170238 0.3531068
+   FinnGen               MR-RAPS (huber, overdispersed)   48 0.8559542 0.5911947 1.239283 0.4100679
+   FinnGen                     IVW, variants with F>=30   47 0.8613984 0.5704435 1.300755 0.4779946
+   FinnGen                 IVW, variants with MAF>=0.01   48 0.8477608 0.5612062 1.280632 0.4326145
+   FinnGen   Radial IVW (modified second order weights)   48 0.8477661 0.5612072 1.280645 0.4326370
+                                                                                               note
+                                                                                               <NA>
+                                                                              valid instruments: 40
+                                                                           CI 0.932-1.185; valid 33
+                                                                                               <NA>
+                                                                                               <NA>
+                                                                                               <NA>
+                                                                                               <NA>
+                                                                                               <NA>
+                                                                                               <NA>
+                                                                                               <NA>
+ radial outliers: rs157580;rs112875651;rs58542926;rs4665972;rs56325564;rs553427;rs2326077;rs2737245
+                                                                                               <NA>
+                                                                              valid instruments: 45
+                                                                           CI 0.766-1.178; valid 41
+                                                                                               <NA>
+                                                                                               <NA>
+                                                                                               <NA>
+                                                                                               <NA>
+                                                                                               <NA>
+                                                                                               <NA>
+                                                                                               <NA>
+           radial outliers: rs157580;rs112875651;rs58542926;rs1883711;rs4665972;rs1169292;rs2326077
+                                                                                               <NA>
+                                                                              valid instruments: 46
+                                                                           CI 0.698-1.585; valid 38
+                                                                                               <NA>
+                                                                                               <NA>
+                                                                                               <NA>
+                                                                                               <NA>
+                                                                                               <NA>
+                                                                                               <NA>
+                                                                                               <NA>
+                                                  radial outliers: rs112875651;rs58542926;rs6601299
+   dataset nsnp    Q_IVW      Q_IVW_p    I2_IVW  Q_Egger    Q_Egger_p     I2_GX Egger_intercept Egger_intercept_se
+  Ghodsian   48 204.7934 1.374406e-21 0.7705004 199.1867 5.812059e-21 0.9934698     0.011232523         0.00987130
+ Fairfield   51 251.3738 1.247876e-28 0.8010930 239.0342 8.084436e-27 0.9933310     0.021080010         0.01325418
+   FinnGen   48 106.1663 1.814046e-06 0.5572984 106.1579 1.172705e-06 0.9934698    -0.001292646         0.02145930
+ Egger_intercept_p phi_random_effects
+         0.2551635           4.357307
+         0.1117352           5.027476
+         0.9519668           2.258858
+
+==== sessionInfo ====
+R version 4.4.3 (2025-02-28)
+Platform: x86_64-apple-darwin20
+Running under: macOS 26.5.2
+
+Matrix products: default
+BLAS:   /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib 
+LAPACK: /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+time zone: Asia/Taipei
+tzcode source: internal
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+[1] RadialMR_1.2.1                mr.raps_0.2                   MendelianRandomization_0.10.0 MRPRESSO_1.0                 
+[5] TwoSampleMR_0.6.22           
+
+loaded via a namespace (and not attached):
+ [1] gmp_0.7-5           plotly_4.11.0       generics_0.1.4      tidyr_1.3.1         nortest_1.0-4       robustbase_0.99-4-1
+ [7] shape_1.4.6.1       lattice_0.22-7      digest_0.6.37       magrittr_2.0.4      evaluate_1.0.5      grid_4.4.3         
+[13] RColorBrewer_1.1-3  iterators_1.0.14    fastmap_1.2.0       foreach_1.5.2       glmnet_4.1-10       plyr_1.8.9         
+[19] jsonlite_2.0.0      Matrix_1.7-3        survival_3.8-3      httr_1.4.7          purrr_1.1.0         viridisLite_0.4.2  
+[25] scales_1.4.0        numDeriv_2016.8-1.1 codetools_0.2-20    lazyeval_0.2.2      cli_3.6.5           rlang_1.1.6        
+[31] splines_4.4.3       remotes_2.5.0       tools_4.4.3         SparseM_1.84-2      MatrixModels_0.5-4  dplyr_1.1.4        
+[37] colorspace_2.1-1    ggplot2_4.0.0       vctrs_0.6.5         R6_2.6.1            lifecycle_1.0.4     arrangements_1.1.9 
+[43] htmlwidgets_1.6.4   MASS_7.3-65         pkgconfig_2.0.3     pillar_1.11.1       gtable_0.3.6        data.table_1.17.8  
+[49] glue_1.8.0          Rcpp_1.1.0          DEoptimR_1.1-3-1    xfun_0.53           tibble_3.3.0        tidyselect_1.2.1   
+[55] rstudioapi_0.17.1   knitr_1.50          rjson_0.2.23        farver_2.1.2        htmltools_0.5.8.1   rmarkdown_2.30     
+[61] compiler_4.4.3      quantreg_6.1        S7_0.2.0            iterpc_0.4.2       
+Run finished: 2026-10-16 00:57:59 CST 
