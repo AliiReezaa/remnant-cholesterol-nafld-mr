@@ -1,0 +1,180 @@
+[
+ {
+  "outcome": "GCST90091033",
+  "desc": "Ghodsian 2021 (eMERGE+FinnGen+UKB+Estonian Biobank)",
+  "ncase": 8434,
+  "ncontrol": 770180,
+  "neff": 33370.569345015625,
+  "n_instruments_in": 52,
+  "n_used": 48,
+  "missing": 3,
+  "palindromic_removed": 1,
+  "mean_F": 150.07606303457885,
+  "min_F": 29.786454196877806,
+  "R2": 0.0623015348935131,
+  "F_overall": 159.2270136690393,
+  "ivw_b": 0.04424995400145441,
+  "ivw_se": 0.09737199214192263,
+  "ivw_p": 0.6495104983902895,
+  "ivw_or": 1.0452435850559,
+  "ivw_or_lo": 0.8636431250605899,
+  "ivw_or_hi": 1.2650296405982075,
+  "Q": 204.7934144986889,
+  "Q_df": 47,
+  "Q_p": 1.3744057028050452e-21,
+  "egger_int": 0.011232523368955385,
+  "egger_int_se": 0.009871299891267787,
+  "egger_int_p": 0.2610556306496004,
+  "presso_global_p": 0.0001,
+  "presso_outliers": [
+   "rs112875651",
+   "rs58542926",
+   "rs4665972",
+   "rs2326077"
+  ],
+  "presso_corr_or": 1.0230268919835717,
+  "presso_corr_p": 0.6925591787690302,
+  "presso_corr_n": 44,
+  "steiger_removed": [
+   "rs58542926",
+   "rs4665972",
+   "rs2326077"
+  ],
+  "steiger_ivw_or": 1.0806454819565185,
+  "steiger_ivw_p": 0.2632164591301527,
+  "mde_or_80pct_power": 1.313632121707594,
+  "mde_or_80pct_power_protective": 0.7612481329248385,
+  "overlap_relative_bias_if_full": 0.0062803413626694405,
+  "log": {
+   "missing_in_outcome": [
+    "rs7534572",
+    "rs574454081",
+    "rs532754706"
+   ],
+   "palindromic_removed": [
+    "rs1293261"
+   ],
+   "allele_mismatch": []
+  }
+ },
+ {
+  "outcome": "GCST90054782",
+  "desc": "Fairfield 2022 (UK Biobank)",
+  "ncase": 4761,
+  "ncontrol": 373227,
+  "neff": 18804.128670751456,
+  "n_instruments_in": 52,
+  "n_used": 51,
+  "missing": 0,
+  "palindromic_removed": 1,
+  "mean_F": 147.01077010698984,
+  "min_F": 29.786454196877806,
+  "R2": 0.06485253319832462,
+  "F_overall": 156.418381070901,
+  "ivw_b": -0.0009024697161360761,
+  "ivw_se": 0.128691635711924,
+  "ivw_p": 0.9944047587293796,
+  "ivw_or": 0.9990979373871829,
+  "ivw_or_lo": 0.7763642746786452,
+  "ivw_or_hi": 1.2857323823980689,
+  "Q": 251.3737878730298,
+  "Q_df": 50,
+  "Q_p": 1.2478758004399467e-28,
+  "egger_int": 0.021080009569818495,
+  "egger_int_se": 0.013254181709284338,
+  "egger_int_p": 0.11816710232383594,
+  "presso_global_p": 0.0001,
+  "presso_outliers": [
+   "rs112875651",
+   "rs58542926",
+   "rs4665972"
+  ],
+  "presso_corr_or": 1.0088082180779585,
+  "presso_corr_p": 0.9070604077670871,
+  "presso_corr_n": 48,
+  "steiger_removed": [
+   "rs112875651",
+   "rs58542926",
+   "rs4665972",
+   "rs2326077"
+  ],
+  "steiger_ivw_or": 0.9955777889192947,
+  "steiger_ivw_p": 0.9506409546281076,
+  "mde_or_80pct_power": 1.4341044191615233,
+  "mde_or_80pct_power_protective": 0.6972992946947819,
+  "overlap_relative_bias_if_full": 0.006393110535690316,
+  "log": {
+   "missing_in_outcome": [],
+   "palindromic_removed": [
+    "rs1293261"
+   ],
+   "allele_mismatch": []
+  }
+ },
+ {
+  "outcome": "finn-b-NAFLD",
+  "desc": "FinnGen R5",
+  "ncase": 894,
+  "ncontrol": 217898,
+  "neff": 3561.388204321913,
+  "n_instruments_in": 52,
+  "n_used": 48,
+  "missing": 3,
+  "palindromic_removed": 1,
+  "mean_F": 150.07606303457885,
+  "min_F": 29.786454196877806,
+  "R2": 0.0623015348935131,
+  "F_overall": 159.2270136690393,
+  "ivw_b": -0.16515673623042113,
+  "ivw_se": 0.21046433558019179,
+  "ivw_p": 0.4326145138180457,
+  "ivw_or": 0.8477608188391778,
+  "ivw_or_lo": 0.5612104796673449,
+  "ivw_or_hi": 1.280621855787295,
+  "Q": 106.16632106452849,
+  "Q_df": 47,
+  "Q_p": 1.8140463117162283e-06,
+  "egger_int": -0.0012926460437525421,
+  "egger_int_se": 0.02145930131129941,
+  "egger_int_p": 0.9522277476553715,
+  "presso_global_p": 0.0001,
+  "presso_outliers": [
+   "rs112875651",
+   "rs58542926"
+  ],
+  "presso_corr_or": 0.8387376141743237,
+  "presso_corr_p": 0.24384398670263863,
+  "presso_corr_n": 46,
+  "steiger_removed": [
+   "rs112875651",
+   "rs58542926",
+   "rs4704834",
+   "rs926053",
+   "rs72631343",
+   "rs6601299",
+   "rs10260606",
+   "rs2326077",
+   "rs72843670",
+   "rs1500188",
+   "rs35633876",
+   "rs72694391",
+   "rs12620918"
+  ],
+  "steiger_ivw_or": 0.9487946312045605,
+  "steiger_ivw_p": 0.7271603434946441,
+  "mde_or_80pct_power": 1.8033277816109718,
+  "mde_or_80pct_power_protective": 0.5545303578180708,
+  "overlap_relative_bias_if_full": 0.0062803413626694405,
+  "log": {
+   "missing_in_outcome": [
+    "rs7534572",
+    "rs574454081",
+    "rs532754706"
+   ],
+   "palindromic_removed": [
+    "rs1293261"
+   ],
+   "allele_mismatch": []
+  }
+ }
+]

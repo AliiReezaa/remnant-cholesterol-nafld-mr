@@ -1,0 +1,6 @@
+inputs/
+work/ld/
+*.bed
+*.bim
+*.fam
+__pycache__/
