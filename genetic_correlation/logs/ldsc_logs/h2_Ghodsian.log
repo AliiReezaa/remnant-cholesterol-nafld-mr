@@ -1,0 +1,35 @@
+*********************************************************************
+* LD Score Regression (LDSC)
+* Version 2.0.0
+* (C) 2014-2019 Brendan Bulik-Sullivan and Hilary Finucane
+* Broad Institute of MIT and Harvard / MIT Department of Mathematics
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./ldsc.py \
+--out /home/claude/rg_work/ldsc_out/h2_Ghodsian \
+--h2 /home/claude/rg_work/munged/Ghodsian.sumstats.gz \
+--ref-ld-chr /home/claude/rg_work/ref/1000G_Phase3_weights_hm3_no_MHC/weights.hm3_noMHC. \
+--w-ld-chr /home/claude/rg_work/ref/1000G_Phase3_weights_hm3_no_MHC/weights.hm3_noMHC. \
+--M 1187349 \
+--samp-prev 0.010832 \
+--pop-prev 0.010832 
+
+Beginning analysis at Fri Oct 16 13:30:16 2026
+Reading summary statistics from /home/claude/rg_work/munged/Ghodsian.sumstats.gz ...
+Read summary statistics for 1128949 SNPs.
+Reading reference panel LD Score from /home/claude/rg_work/ref/1000G_Phase3_weights_hm3_no_MHC/weights.hm3_noMHC.[1-22] ... (ldscore_fromlist)
+Read reference panel LD Scores for 1187349 SNPs.
+Removing partitioned LD Scores with zero variance.
+Reading regression weight LD Score from /home/claude/rg_work/ref/1000G_Phase3_weights_hm3_no_MHC/weights.hm3_noMHC.[1-22] ... (ldscore_fromlist)
+Read regression weight LD Scores for 1187349 SNPs.
+After merging with reference panel LD, 1128949 SNPs remain.
+After merging with regression SNP LD, 1128949 SNPs remain.
+Using two-step estimator with cutoff at 30.
+Total Liability scale h2: 0.0233 (0.0086)
+Lambda GC: 1.0285
+Mean Chi^2: 1.0309
+Intercept: 1.0063 (0.007)
+Ratio: 0.205 (0.2259)
+Analysis finished at Fri Oct 16 13:30:23 2026
+Total time elapsed: 6.83s

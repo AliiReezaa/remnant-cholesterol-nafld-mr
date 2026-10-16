@@ -1,0 +1,174 @@
+*********************************************************************
+* LD Score Regression (LDSC)
+* Version 2.0.0
+* (C) 2014-2019 Brendan Bulik-Sullivan and Hilary Finucane
+* Broad Institute of MIT and Harvard / MIT Department of Mathematics
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./ldsc.py \
+--out /home/claude/rg_work/ldsc_out/rg_GLGC_TG_vs_all \
+--rg /home/claude/rg_work/munged/GLGC_TG.sumstats.gz,/home/claude/rg_work/munged/CAD.sumstats.gz,/home/claude/rg_work/munged/GLGC_LDL.sumstats.gz,/home/claude/rg_work/munged/RC.sumstats.gz,/home/claude/rg_work/munged/Ghodsian.sumstats.gz,/home/claude/rg_work/munged/Fairfield.sumstats.gz \
+--ref-ld-chr /home/claude/rg_work/ref/1000G_Phase3_weights_hm3_no_MHC/weights.hm3_noMHC. \
+--w-ld-chr /home/claude/rg_work/ref/1000G_Phase3_weights_hm3_no_MHC/weights.hm3_noMHC. \
+--M 1187349 
+
+Beginning analysis at Fri Oct 16 13:40:16 2026
+Reading summary statistics from /home/claude/rg_work/munged/GLGC_TG.sumstats.gz ...
+Read summary statistics for 1018066 SNPs.
+Reading reference panel LD Score from /home/claude/rg_work/ref/1000G_Phase3_weights_hm3_no_MHC/weights.hm3_noMHC.[1-22] ... (ldscore_fromlist)
+Read reference panel LD Scores for 1187349 SNPs.
+Removing partitioned LD Scores with zero variance.
+Reading regression weight LD Score from /home/claude/rg_work/ref/1000G_Phase3_weights_hm3_no_MHC/weights.hm3_noMHC.[1-22] ... (ldscore_fromlist)
+Read regression weight LD Scores for 1187349 SNPs.
+After merging with reference panel LD, 1018066 SNPs remain.
+After merging with regression SNP LD, 1018066 SNPs remain.
+Computing rg for phenotype 2/6
+Reading summary statistics from /home/claude/rg_work/munged/CAD.sumstats.gz ...
+Read summary statistics for 1187349 SNPs.
+After merging with summary statistics, 1018066 SNPs remain.
+1017901 SNPs with valid alleles.
+
+Heritability of phenotype 1
+---------------------------
+Total Observed scale h2: 0.3217 (0.071)
+Lambda GC: 1.1207
+Mean Chi^2: 1.3476
+Intercept: 0.8595 (0.0399)
+Ratio < 0 (usually indicates GC correction).
+
+Heritability of phenotype 2/6
+-----------------------------
+Total Observed scale h2: 0.0755 (0.0057)
+Lambda GC: 1.0466
+Mean Chi^2: 1.1258
+Intercept: 0.881 (0.0089)
+Ratio < 0 (usually indicates GC correction).
+
+Genetic Covariance
+------------------
+Total Observed scale gencov: 0.0421 (0.0068)
+Mean z1*z2: 0.0939
+Intercept: 0.0062 (0.006)
+
+Genetic Correlation
+-------------------
+Genetic Correlation: 0.27 (0.0337)
+Z-score: 8.0155
+P: 1.0973e-15
+
+Computing rg for phenotype 3/6
+Reading summary statistics from /home/claude/rg_work/munged/GLGC_LDL.sumstats.gz ...
+Read summary statistics for 1187349 SNPs.
+After merging with summary statistics, 1018066 SNPs remain.
+1017784 SNPs with valid alleles.
+
+Heritability of phenotype 3/6
+-----------------------------
+Total Observed scale h2: 0.2501 (0.0572)
+Lambda GC: 1.105
+Mean Chi^2: 1.2946
+Intercept: 0.9476 (0.0566)
+Ratio < 0 (usually indicates GC correction).
+
+Genetic Covariance
+------------------
+Total Observed scale gencov: 0.1031 (0.0238)
+Mean z1*z2: 0.3181
+Intercept: 0.1715 (0.0128)
+
+Genetic Correlation
+-------------------
+Genetic Correlation: 0.3624 (0.0546)
+Z-score: 6.6427
+P: 3.0807e-11
+
+Computing rg for phenotype 4/6
+Reading summary statistics from /home/claude/rg_work/munged/RC.sumstats.gz ...
+Read summary statistics for 1187349 SNPs.
+After merging with summary statistics, 1018066 SNPs remain.
+1015692 SNPs with valid alleles.
+
+Heritability of phenotype 4/6
+-----------------------------
+Total Observed scale h2: 0.0773 (0.0282)
+Lambda GC: 1.1238
+Mean Chi^2: 1.2475
+Intercept: 1.0829 (0.0574)
+Ratio: 0.3351 (0.232)
+
+Genetic Covariance
+------------------
+Total Observed scale gencov: 0.0671 (0.0186)
+Mean z1*z2: 0.1073
+Intercept: -0.0089 (0.0145)
+
+Genetic Correlation
+-------------------
+Genetic Correlation: 0.4239 (0.1033)
+Z-score: 4.1027
+P: 4.0843e-05
+
+Computing rg for phenotype 5/6
+Reading summary statistics from /home/claude/rg_work/munged/Ghodsian.sumstats.gz ...
+Read summary statistics for 1187349 SNPs.
+After merging with summary statistics, 1018066 SNPs remain.
+989357 SNPs with valid alleles.
+
+Heritability of phenotype 5/6
+-----------------------------
+Total Observed scale h2: 0.0016 (0.0007)
+Lambda GC: 1.0285
+Mean Chi^2: 1.0302
+Intercept: 1.0085 (0.0082)
+Ratio: 0.2813 (0.273)
+
+Genetic Covariance
+------------------
+Total Observed scale gencov: 0.0143 (0.0028)
+Mean z1*z2: 0.0563
+Intercept: -0.008 (0.0062)
+
+Genetic Correlation
+-------------------
+Genetic Correlation: 0.6358 (0.1798)
+Z-score: 3.5372
+P: 0.0004
+
+Computing rg for phenotype 6/6
+Reading summary statistics from /home/claude/rg_work/munged/Fairfield.sumstats.gz ...
+Read summary statistics for 1187349 SNPs.
+After merging with summary statistics, 1018066 SNPs remain.
+1008562 SNPs with valid alleles.
+
+Heritability of phenotype 6/6
+-----------------------------
+Total Observed scale h2: 0.0118 (0.0016)
+Lambda GC: 1.0649
+Mean Chi^2: 1.0795
+Intercept: 1.0003 (0.0075)
+Ratio: 0.0035 (0.0945)
+
+Genetic Covariance
+------------------
+Total Observed scale gencov: 0.0234 (0.0045)
+Mean z1*z2: 0.0724
+Intercept: -0.0039 (0.007)
+
+Genetic Correlation
+-------------------
+Genetic Correlation: 0.3784 (0.0802)
+Z-score: 4.7196
+P: 2.3626e-06
+
+
+Summary of Genetic Correlation Results
+                                             p1                                                p2     rg     se      z          p  h2_obs  h2_obs_se  h2_int  h2_int_se  gcov_int  gcov_int_se
+/home/claude/rg_work/munged/GLGC_TG.sumstats.gz       /home/claude/rg_work/munged/CAD.sumstats.gz 0.2700 0.0337 8.0155 1.0973e-15  0.0755     0.0057  0.8810     0.0089    0.0062       0.0060
+/home/claude/rg_work/munged/GLGC_TG.sumstats.gz  /home/claude/rg_work/munged/GLGC_LDL.sumstats.gz 0.3624 0.0546 6.6427 3.0807e-11  0.2501     0.0572  0.9476     0.0566    0.1715       0.0128
+/home/claude/rg_work/munged/GLGC_TG.sumstats.gz        /home/claude/rg_work/munged/RC.sumstats.gz 0.4239 0.1033 4.1027 4.0843e-05  0.0773     0.0282  1.0829     0.0574   -0.0089       0.0145
+/home/claude/rg_work/munged/GLGC_TG.sumstats.gz  /home/claude/rg_work/munged/Ghodsian.sumstats.gz 0.6358 0.1798 3.5372 4.0444e-04  0.0016     0.0007  1.0085     0.0082   -0.0080       0.0062
+/home/claude/rg_work/munged/GLGC_TG.sumstats.gz /home/claude/rg_work/munged/Fairfield.sumstats.gz 0.3784 0.0802 4.7196 2.3626e-06  0.0118     0.0016  1.0003     0.0075   -0.0039       0.0070
+
+Analysis finished at Fri Oct 16 13:40:43 2026
+Total time elapsed: 26.55s

@@ -1,0 +1,5 @@
+RC vs RC: SNPs 1,165,804  h2_1 0.0850  h2_2 0.0850  gcov 0.0861  rg 1.012 (jackknife SE 0.015)  intercepts: 1.033 1.033 gencov 1.0315
+RC vs CAD: SNPs 1,164,202  h2_1 0.0853  h2_2 0.0755  gcov -0.0003  rg -0.003 (jackknife SE 0.041)  intercepts: 1.032 0.879 gencov 0.0081
+RC vs Ghodsian: SNPs 1,125,728  h2_1 0.0854  h2_2 0.0017  gcov -0.0020  rg -0.169 (jackknife SE 0.126)  intercepts: 1.032 1.007 gencov 0.0036
+RC vs Fairfield: SNPs 1,151,970  h2_1 0.0852  h2_2 0.0120  gcov 0.0019  rg 0.061 (jackknife SE 0.067)  intercepts: 1.032 0.997 gencov -0.0064
+Ghodsian vs Fairfield: SNPs 1,115,923  h2_1 0.0018  h2_2 0.0119  gcov 0.0048  rg 1.028 (jackknife SE 0.164)  intercepts: 1.006 1.000 gencov 0.3247

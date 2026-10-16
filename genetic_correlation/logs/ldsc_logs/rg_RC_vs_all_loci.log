@@ -1,0 +1,179 @@
+*********************************************************************
+* LD Score Regression (LDSC)
+* Version 2.0.0
+* (C) 2014-2019 Brendan Bulik-Sullivan and Hilary Finucane
+* Broad Institute of MIT and Harvard / MIT Department of Mathematics
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./ldsc.py \
+--out /home/claude/rg_work/ldsc_out/rg_RC_vs_all_loci \
+--rg /home/claude/rg_work/split/RC_loci.sumstats.gz,/home/claude/rg_work/split/CAD_loci.sumstats.gz,/home/claude/rg_work/split/GLGC_LDL_loci.sumstats.gz,/home/claude/rg_work/split/GLGC_TG_loci.sumstats.gz,/home/claude/rg_work/split/Ghodsian_loci.sumstats.gz,/home/claude/rg_work/split/Fairfield_loci.sumstats.gz \
+--ref-ld-chr /home/claude/rg_work/ref/1000G_Phase3_weights_hm3_no_MHC/weights.hm3_noMHC. \
+--w-ld-chr /home/claude/rg_work/ref/1000G_Phase3_weights_hm3_no_MHC/weights.hm3_noMHC. \
+--M 1187349 
+
+Beginning analysis at Fri Oct 16 13:48:03 2026
+Reading summary statistics from /home/claude/rg_work/split/RC_loci.sumstats.gz ...
+Read summary statistics for 34619 SNPs.
+Reading reference panel LD Score from /home/claude/rg_work/ref/1000G_Phase3_weights_hm3_no_MHC/weights.hm3_noMHC.[1-22] ... (ldscore_fromlist)
+Read reference panel LD Scores for 1187349 SNPs.
+Removing partitioned LD Scores with zero variance.
+Reading regression weight LD Score from /home/claude/rg_work/ref/1000G_Phase3_weights_hm3_no_MHC/weights.hm3_noMHC.[1-22] ... (ldscore_fromlist)
+Read regression weight LD Scores for 1187349 SNPs.
+After merging with reference panel LD, 34619 SNPs remain.
+After merging with regression SNP LD, 34619 SNPs remain.
+Computing rg for phenotype 2/6
+Reading summary statistics from /home/claude/rg_work/split/CAD_loci.sumstats.gz ...
+Read summary statistics for 35273 SNPs.
+After merging with summary statistics, 34619 SNPs remain.
+34516 SNPs with valid alleles.
+WARNING: number of SNPs less than 200k; this is almost always bad.
+
+Heritability of phenotype 1
+---------------------------
+Total Observed scale h2: 0.6947 (0.8257)
+Lambda GC: 1.9136
+Mean Chi^2: 4.9166
+Intercept: 3.266 (1.5612)
+Ratio: 0.5785 (0.3986)
+
+Heritability of phenotype 2/6
+-----------------------------
+Total Observed scale h2: 0.2003 (0.0388)
+Lambda GC: 1.3443
+Mean Chi^2: 1.6133
+Intercept: 0.9466 (0.0641)
+Ratio < 0 (usually indicates GC correction).
+
+Genetic Covariance
+------------------
+Total Observed scale gencov: 0.1101 (0.1153)
+Mean z1*z2: 0.6104
+Intercept: 0.4171 (0.2182)
+
+Genetic Correlation
+-------------------
+Genetic Correlation: 0.2952 (0.1756)
+Z-score: 1.6811
+P: 0.0927
+
+Computing rg for phenotype 3/6
+Reading summary statistics from /home/claude/rg_work/split/GLGC_LDL_loci.sumstats.gz ...
+Read summary statistics for 35273 SNPs.
+After merging with summary statistics, 34619 SNPs remain.
+29636 SNPs with valid alleles.
+WARNING: number of SNPs less than 200k; this is almost always bad.
+
+Heritability of phenotype 3/6
+-----------------------------
+Total Observed scale h2: 3.5183 (1.4563)
+Lambda GC: 2.0344
+Mean Chi^2: 6.9139
+Intercept: 1.8252 (1.7046)
+Ratio: 0.1395 (0.2882)
+
+Genetic Covariance
+------------------
+Total Observed scale gencov: 1.5862 (1.0717)
+Mean z1*z2: 4.4838
+Intercept: 1.5903 (1.6184)
+
+Genetic Correlation
+-------------------
+Genetic Correlation: 0.9814 (0.0987)
+Z-score: 9.9391
+P: 2.8143e-23
+
+Computing rg for phenotype 4/6
+Reading summary statistics from /home/claude/rg_work/split/GLGC_TG_loci.sumstats.gz ...
+Read summary statistics for 35273 SNPs.
+After merging with summary statistics, 34619 SNPs remain.
+29630 SNPs with valid alleles.
+WARNING: number of SNPs less than 200k; this is almost always bad.
+
+Heritability of phenotype 4/6
+-----------------------------
+Total Observed scale h2: 2.796 (1.0299)
+Lambda GC: 1.6145
+Mean Chi^2: 5.7676
+Intercept: 0.2918 (0.4718)
+Ratio < 0 (usually indicates GC correction).
+
+Genetic Covariance
+------------------
+Total Observed scale gencov: 1.3555 (0.3997)
+Mean z1*z2: 2.0354
+Intercept: -0.4817 (0.3167)
+
+Genetic Correlation
+-------------------
+Genetic Correlation: 1.1429 (0.8236)
+Z-score: 1.3877
+P: 0.1652
+
+Computing rg for phenotype 5/6
+Reading summary statistics from /home/claude/rg_work/split/Ghodsian_loci.sumstats.gz ...
+Read summary statistics for 35273 SNPs.
+After merging with summary statistics, 34619 SNPs remain.
+33444 SNPs with valid alleles.
+WARNING: number of SNPs less than 200k; this is almost always bad.
+
+Heritability of phenotype 5/6
+-----------------------------
+Total Observed scale h2: 0.0125 (0.0055)
+Lambda GC: 1.0046
+Mean Chi^2: 1.1229
+Intercept: 0.9548 (0.0397)
+Ratio < 0 (usually indicates GC correction).
+
+Genetic Covariance
+------------------
+Total Observed scale gencov: 0.0118 (0.0282)
+Mean z1*z2: -0.0089
+Intercept: -0.0786 (0.081)
+
+Genetic Correlation
+-------------------
+Genetic Correlation: 0.1302 (0.3753)
+Z-score: 0.3469
+P: 0.7287
+
+Computing rg for phenotype 6/6
+Reading summary statistics from /home/claude/rg_work/split/Fairfield_loci.sumstats.gz ...
+Read summary statistics for 35273 SNPs.
+After merging with summary statistics, 34619 SNPs remain.
+34232 SNPs with valid alleles.
+WARNING: number of SNPs less than 200k; this is almost always bad.
+
+Heritability of phenotype 6/6
+-----------------------------
+Total Observed scale h2: 0.0425 (0.0176)
+Lambda GC: 1.1747
+Mean Chi^2: 1.2695
+Intercept: 0.9827 (0.0534)
+Ratio < 0 (usually indicates GC correction).
+
+Genetic Covariance
+------------------
+Total Observed scale gencov: 0.0128 (0.0502)
+Mean z1*z2: -0.0472
+Intercept: -0.0854 (0.0835)
+
+Genetic Correlation
+-------------------
+Genetic Correlation: 0.0766 (0.3924)
+Z-score: 0.1953
+P: 0.8451
+
+
+Summary of Genetic Correlation Results
+                                            p1                                                    p2     rg     se      z          p  h2_obs  h2_obs_se  h2_int  h2_int_se  gcov_int  gcov_int_se
+/home/claude/rg_work/split/RC_loci.sumstats.gz       /home/claude/rg_work/split/CAD_loci.sumstats.gz 0.2952 0.1756 1.6811 9.2741e-02  0.2003     0.0388  0.9466     0.0641    0.4171       0.2182
+/home/claude/rg_work/split/RC_loci.sumstats.gz  /home/claude/rg_work/split/GLGC_LDL_loci.sumstats.gz 0.9814 0.0987 9.9391 2.8143e-23  3.5183     1.4563  1.8252     1.7046    1.5903       1.6184
+/home/claude/rg_work/split/RC_loci.sumstats.gz   /home/claude/rg_work/split/GLGC_TG_loci.sumstats.gz 1.1429 0.8236 1.3877 1.6523e-01  2.7960     1.0299  0.2918     0.4718   -0.4817       0.3167
+/home/claude/rg_work/split/RC_loci.sumstats.gz  /home/claude/rg_work/split/Ghodsian_loci.sumstats.gz 0.1302 0.3753 0.3469 7.2868e-01  0.0125     0.0055  0.9548     0.0397   -0.0786       0.0810
+/home/claude/rg_work/split/RC_loci.sumstats.gz /home/claude/rg_work/split/Fairfield_loci.sumstats.gz 0.0766 0.3924 0.1953 8.4514e-01  0.0425     0.0176  0.9827     0.0534   -0.0854       0.0835
+
+Analysis finished at Fri Oct 16 13:48:14 2026
+Total time elapsed: 10.45s

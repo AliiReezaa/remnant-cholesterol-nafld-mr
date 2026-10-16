@@ -1,0 +1,43 @@
+                     run        trait1         trait2      rg     se       z      p  gcov_int  h2_trait2  h2_int_trait2
+      rg_GLGC_LDL_vs_all      GLGC_LDL            CAD  0.2239 0.0410  5.4541 0.0000    0.0186     0.0756            NaN
+      rg_GLGC_LDL_vs_all      GLGC_LDL             RC  0.8442 0.0537 15.7191 0.0000    0.0325     0.0818            NaN
+      rg_GLGC_LDL_vs_all      GLGC_LDL       Ghodsian  0.2425 0.1369  1.7708 0.0766   -0.0061     0.0016            NaN
+      rg_GLGC_LDL_vs_all      GLGC_LDL      Fairfield  0.1584 0.0758  2.0906 0.0366   -0.0040     0.0119            NaN
+       rg_GLGC_TG_vs_all       GLGC_TG            CAD  0.2700 0.0337  8.0155 0.0000    0.0062     0.0755            NaN
+       rg_GLGC_TG_vs_all       GLGC_TG       GLGC_LDL  0.3624 0.0546  6.6427 0.0000    0.1715     0.2501            NaN
+       rg_GLGC_TG_vs_all       GLGC_TG             RC  0.4239 0.1033  4.1027 0.0000   -0.0089     0.0773            NaN
+       rg_GLGC_TG_vs_all       GLGC_TG       Ghodsian  0.6358 0.1798  3.5372 0.0004   -0.0080     0.0016            NaN
+       rg_GLGC_TG_vs_all       GLGC_TG      Fairfield  0.3784 0.0802  4.7196 0.0000   -0.0039     0.0118            NaN
+rg_Ghodsian_vs_Fairfield      Ghodsian      Fairfield  1.0359 0.1617  6.4063 0.0000    0.3245     0.0118            NaN
+   rg_LDL_vs_CAD_TG_bulk GLGC_LDL_bulk       CAD_bulk  0.1908 0.0422  4.5228 0.0000    0.0113     0.0717            NaN
+   rg_LDL_vs_CAD_TG_bulk GLGC_LDL_bulk   GLGC_TG_bulk  0.3061 0.0396  7.7274 0.0000    0.1934     0.2169            NaN
+   rg_LDL_vs_CAD_TG_loci GLGC_LDL_loci       CAD_loci  0.5129 0.1314  3.9044 0.0001    0.3074     0.2053            NaN
+   rg_LDL_vs_CAD_TG_loci GLGC_LDL_loci   GLGC_TG_loci  0.4414 0.1048  4.2134 0.0000   -0.1866     2.8494            NaN
+            rg_RC_vs_all            RC       Ghodsian -0.1891 0.1421 -1.3302 0.1835    0.0035     0.0223            NaN
+            rg_RC_vs_all            RC      Fairfield  0.0656 0.0916  0.7157 0.4742   -0.0078     0.1427            NaN
+            rg_RC_vs_all            RC            CAD -0.0016 0.0594 -0.0270 0.9785    0.0144     0.0736            NaN
+       rg_RC_vs_all_bulk       RC_bulk       CAD_bulk -0.0357 0.0493 -0.7244 0.4688    0.0005     0.0729            NaN
+       rg_RC_vs_all_bulk       RC_bulk  GLGC_LDL_bulk  0.8178 0.0591 13.8272 0.0000   -0.0047     0.1200            NaN
+       rg_RC_vs_all_bulk       RC_bulk   GLGC_TG_bulk  0.2211 0.0521  4.2460 0.0000    0.0077     0.2177            NaN
+       rg_RC_vs_all_bulk       RC_bulk  Ghodsian_bulk -0.2993 0.1622 -1.8451 0.0650    0.0063     0.0014            NaN
+       rg_RC_vs_all_bulk       RC_bulk Fairfield_bulk  0.0661 0.0828  0.7979 0.4249   -0.0054     0.0112            NaN
+       rg_RC_vs_all_loci       RC_loci       CAD_loci  0.2952 0.1756  1.6811 0.0927    0.4171     0.2003            NaN
+       rg_RC_vs_all_loci       RC_loci  GLGC_LDL_loci  0.9814 0.0987  9.9391 0.0000    1.5903     3.5183            NaN
+       rg_RC_vs_all_loci       RC_loci   GLGC_TG_loci  1.1429 0.8236  1.3877 0.1652   -0.4817     2.7960            NaN
+       rg_RC_vs_all_loci       RC_loci  Ghodsian_loci  0.1302 0.3753  0.3469 0.7287   -0.0786     0.0125            NaN
+       rg_RC_vs_all_loci       RC_loci Fairfield_loci  0.0766 0.3924  0.1953 0.8451   -0.0854     0.0425            NaN
+     sens_A_chisqmax_off            RC            CAD -0.0016 0.0594 -0.0270 0.9785    0.0144     0.0736            NaN
+     sens_A_chisqmax_off            RC       Ghodsian -0.1891 0.1421 -1.3302 0.1835    0.0035     0.0223            NaN
+     sens_A_chisqmax_off            RC      Fairfield  0.0656 0.0916  0.7157 0.4742   -0.0078     0.1427            NaN
+    sens_B_full1000G_ref            RC            CAD -0.0151 0.0758 -0.1985 0.8427    0.0154     0.0447            NaN
+    sens_B_full1000G_ref            RC       Ghodsian -0.5663 0.5939 -0.9534 0.3404    0.0038     0.0035            NaN
+    sens_B_full1000G_ref            RC      Fairfield  0.0292 0.1129  0.2582 0.7962   -0.0046     0.0740            NaN
+          sens_C_twostep            RC            CAD  0.0446 0.0425  1.0484 0.2945    0.0055     0.0722            NaN
+          sens_C_twostep            RC       Ghodsian -0.1722 0.1085 -1.5882 0.1122    0.0044     0.0234            NaN
+          sens_C_twostep            RC      Fairfield  0.0486 0.0667  0.7290 0.4660   -0.0069     0.1451            NaN
+
+    trait     scale     h2  h2_se    z_h2  mean_chi2  lambda_gc  intercept  intercept_se
+      CAD Liability 0.0725 0.0049 14.7959     1.1243     1.0466     0.8811        0.0074
+Fairfield Liability 0.1453 0.0185  7.8541     1.0788     1.0649     0.9964        0.0067
+ Ghodsian Liability 0.0233 0.0086  2.7093     1.0309     1.0285     1.0063        0.0070
+       RC  Observed 0.1095 0.0152  7.2039     1.2448     1.1270     1.0251        0.0095

@@ -1,0 +1,55 @@
+*********************************************************************
+* LD Score Regression (LDSC)
+* Version 2.0.0
+* (C) 2014-2019 Brendan Bulik-Sullivan and Hilary Finucane
+* Broad Institute of MIT and Harvard / MIT Department of Mathematics
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./munge_sumstats.py \
+--sumstats /home/claude/rg_work/munge_in/GLGC_LDL.tsv.gz \
+--out /home/claude/rg_work/munged/GLGC_LDL \
+--merge-alleles /home/claude/rg_work/ref/w_hm3_1000G.snplist \
+--chunksize 500000 \
+--snp SNP \
+--N-col N \
+--a1 A1 \
+--a2 A2 \
+--p P \
+--frq FRQ \
+--signed-sumstats BETA,0 
+
+Interpreting column names as follows:
+SNP:	Variant ID (e.g., rs number)
+A1:	Allele 1, interpreted as ref allele for signed sumstat.
+A2:	Allele 2, interpreted as non-ref allele for signed sumstat.
+BETA:	Directional summary statistic as specified by --signed-sumstats.
+P:	p-Value
+N:	Sample size
+FRQ:	Allele frequency
+
+Reading list of SNPs for allele merge from /home/claude/rg_work/ref/w_hm3_1000G.snplist
+Read 1187349 SNPs for allele merge.
+Reading sumstats from /home/claude/rg_work/munge_in/GLGC_LDL.tsv.gz into memory 500000 SNPs at a time.
+Read 2251946 SNPs from --sumstats file.
+Removed 1221767 SNPs not in --merge-alleles.
+Removed 554 SNPs with missing values.
+Removed 0 SNPs with INFO <= 0.9.
+Removed 2731 SNPs with MAF <= 0.01.
+Removed 0 SNPs with out-of-bounds p-values.
+Removed 0 variants that were not SNPs or were strand-ambiguous.
+1026894 SNPs remain.
+Removed 0 SNPs with duplicated rs numbers (1026894 SNPs remain).
+Removed 8839 SNPs with N < 59925.333333333336 (1018055 SNPs remain).
+Median value of SIGNED_SUMSTATS was 0.0047999999999999, which seems sensible.
+Removed 0 SNPs whose alleles did not match --merge-alleles (1018055 SNPs remain).
+Writing summary statistics for 1187349 SNPs (1018055 with nonmissing beta) to /home/claude/rg_work/munged/GLGC_LDL.sumstats.gz.
+
+Metadata:
+Mean chi^2 = 1.295
+Lambda GC = 1.105
+Max chi^2 = 1333.91
+1397 Genome-wide significant SNPs (some may have been removed by filtering).
+
+Conversion finished at Fri Oct 16 13:40:15 2026
+Total time elapsed: 24.27s

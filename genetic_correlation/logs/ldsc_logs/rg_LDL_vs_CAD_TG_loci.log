@@ -1,0 +1,95 @@
+*********************************************************************
+* LD Score Regression (LDSC)
+* Version 2.0.0
+* (C) 2014-2019 Brendan Bulik-Sullivan and Hilary Finucane
+* Broad Institute of MIT and Harvard / MIT Department of Mathematics
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./ldsc.py \
+--out /home/claude/rg_work/ldsc_out/rg_LDL_vs_CAD_TG_loci \
+--rg /home/claude/rg_work/split/GLGC_LDL_loci.sumstats.gz,/home/claude/rg_work/split/CAD_loci.sumstats.gz,/home/claude/rg_work/split/GLGC_TG_loci.sumstats.gz \
+--ref-ld-chr /home/claude/rg_work/ref/1000G_Phase3_weights_hm3_no_MHC/weights.hm3_noMHC. \
+--w-ld-chr /home/claude/rg_work/ref/1000G_Phase3_weights_hm3_no_MHC/weights.hm3_noMHC. \
+--M 1187349 
+
+Beginning analysis at Fri Oct 16 13:48:03 2026
+Reading summary statistics from /home/claude/rg_work/split/GLGC_LDL_loci.sumstats.gz ...
+Read summary statistics for 29686 SNPs.
+Reading reference panel LD Score from /home/claude/rg_work/ref/1000G_Phase3_weights_hm3_no_MHC/weights.hm3_noMHC.[1-22] ... (ldscore_fromlist)
+Read reference panel LD Scores for 1187349 SNPs.
+Removing partitioned LD Scores with zero variance.
+Reading regression weight LD Score from /home/claude/rg_work/ref/1000G_Phase3_weights_hm3_no_MHC/weights.hm3_noMHC.[1-22] ... (ldscore_fromlist)
+Read regression weight LD Scores for 1187349 SNPs.
+After merging with reference panel LD, 29686 SNPs remain.
+After merging with regression SNP LD, 29686 SNPs remain.
+Computing rg for phenotype 2/3
+Reading summary statistics from /home/claude/rg_work/split/CAD_loci.sumstats.gz ...
+Read summary statistics for 35273 SNPs.
+After merging with summary statistics, 29686 SNPs remain.
+29673 SNPs with valid alleles.
+WARNING: number of SNPs less than 200k; this is almost always bad.
+
+Heritability of phenotype 1
+---------------------------
+Total Observed scale h2: 3.5116 (1.4613)
+Lambda GC: 2.0344
+Mean Chi^2: 6.9069
+Intercept: 1.8285 (1.7053)
+Ratio: 0.1403 (0.2887)
+
+Heritability of phenotype 2/3
+-----------------------------
+Total Observed scale h2: 0.2053 (0.041)
+Lambda GC: 1.3546
+Mean Chi^2: 1.6475
+Intercept: 0.949 (0.0764)
+Ratio < 0 (usually indicates GC correction).
+
+Genetic Covariance
+------------------
+Total Observed scale gencov: 0.4354 (0.2166)
+Mean z1*z2: 1.0846
+Intercept: 0.3074 (0.2949)
+
+Genetic Correlation
+-------------------
+Genetic Correlation: 0.5129 (0.1314)
+Z-score: 3.9044
+P: 9.4459e-05
+
+Computing rg for phenotype 3/3
+Reading summary statistics from /home/claude/rg_work/split/GLGC_TG_loci.sumstats.gz ...
+Read summary statistics for 35273 SNPs.
+After merging with summary statistics, 29686 SNPs remain.
+29675 SNPs with valid alleles.
+WARNING: number of SNPs less than 200k; this is almost always bad.
+
+Heritability of phenotype 3/3
+-----------------------------
+Total Observed scale h2: 2.8494 (0.9692)
+Lambda GC: 1.6145
+Mean Chi^2: 5.7571
+Intercept: 0.2186 (0.4171)
+Ratio < 0 (usually indicates GC correction).
+
+Genetic Covariance
+------------------
+Total Observed scale gencov: 1.3964 (0.4253)
+Mean z1*z2: 2.1087
+Intercept: -0.1866 (0.1665)
+
+Genetic Correlation
+-------------------
+Genetic Correlation: 0.4414 (0.1048)
+Z-score: 4.2134
+P: 2.5154e-05
+
+
+Summary of Genetic Correlation Results
+                                                  p1                                                  p2     rg     se      z          p  h2_obs  h2_obs_se  h2_int  h2_int_se  gcov_int  gcov_int_se
+/home/claude/rg_work/split/GLGC_LDL_loci.sumstats.gz     /home/claude/rg_work/split/CAD_loci.sumstats.gz 0.5129 0.1314 3.9044 9.4459e-05  0.2053     0.0410  0.9490     0.0764    0.3074       0.2949
+/home/claude/rg_work/split/GLGC_LDL_loci.sumstats.gz /home/claude/rg_work/split/GLGC_TG_loci.sumstats.gz 0.4414 0.1048 4.2134 2.5154e-05  2.8494     0.9692  0.2186     0.4171   -0.1866       0.1665
+
+Analysis finished at Fri Oct 16 13:48:13 2026
+Total time elapsed: 10.07s

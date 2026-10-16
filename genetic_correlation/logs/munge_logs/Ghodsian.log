@@ -1,0 +1,54 @@
+*********************************************************************
+* LD Score Regression (LDSC)
+* Version 2.0.0
+* (C) 2014-2019 Brendan Bulik-Sullivan and Hilary Finucane
+* Broad Institute of MIT and Harvard / MIT Department of Mathematics
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./munge_sumstats.py \
+--sumstats /home/claude/rg_work/munge_in/Ghodsian.tsv.gz \
+--N-cas 8434.0 \
+--N-con 770180.0 \
+--out /home/claude/rg_work/munged/Ghodsian \
+--merge-alleles /home/claude/rg_work/ref/w_hm3_1000G.snplist \
+--chunksize 500000 \
+--snp SNP \
+--a1 A1 \
+--a2 A2 \
+--p P \
+--frq FRQ \
+--signed-sumstats BETA,0 
+
+Interpreting column names as follows:
+SNP:	Variant ID (e.g., rs number)
+A1:	Allele 1, interpreted as ref allele for signed sumstat.
+A2:	Allele 2, interpreted as non-ref allele for signed sumstat.
+BETA:	Directional summary statistic as specified by --signed-sumstats.
+P:	p-Value
+FRQ:	Allele frequency
+
+Reading list of SNPs for allele merge from /home/claude/rg_work/ref/w_hm3_1000G.snplist
+Read 1187349 SNPs for allele merge.
+Reading sumstats from /home/claude/rg_work/munge_in/Ghodsian.tsv.gz into memory 500000 SNPs at a time.
+Read 6797900 SNPs from --sumstats file.
+Removed 5666068 SNPs not in --merge-alleles.
+Removed 0 SNPs with missing values.
+Removed 0 SNPs with INFO <= 0.9.
+Removed 2883 SNPs with MAF <= 0.01.
+Removed 0 SNPs with out-of-bounds p-values.
+Removed 0 variants that were not SNPs or were strand-ambiguous.
+1128949 SNPs remain.
+Removed 0 SNPs with duplicated rs numbers (1128949 SNPs remain).
+Median value of SIGNED_SUMSTATS was 3.88e-05, which seems sensible.
+Removed 0 SNPs whose alleles did not match --merge-alleles (1128949 SNPs remain).
+Writing summary statistics for 1187349 SNPs (1128949 with nonmissing beta) to /home/claude/rg_work/munged/Ghodsian.sumstats.gz.
+
+Metadata:
+Mean chi^2 = 1.031
+Lambda GC = 1.029
+Max chi^2 = 210.898
+60 Genome-wide significant SNPs (some may have been removed by filtering).
+
+Conversion finished at Fri Oct 16 13:27:00 2026
+Total time elapsed: 1.0m:15.61s

@@ -1,0 +1,21 @@
+*********************************************************************
+* LD Score Regression (LDSC)
+* Version 2.0.0
+* (C) 2014-2019 Brendan Bulik-Sullivan and Hilary Finucane
+* Broad Institute of MIT and Harvard / MIT Department of Mathematics
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./ldsc.py \
+--out /home/claude/rg_work/ldsc_out/sens_D_gcov_int0 \
+--rg /home/claude/rg_work/munged/RC.sumstats.gz,/home/claude/rg_work/munged/CAD.sumstats.gz,/home/claude/rg_work/munged/Ghodsian.sumstats.gz,/home/claude/rg_work/munged/Fairfield.sumstats.gz \
+--ref-ld-chr /home/claude/rg_work/ref/1000G_Phase3_weights_hm3_no_MHC/weights.hm3_noMHC. \
+--w-ld-chr /home/claude/rg_work/ref/1000G_Phase3_weights_hm3_no_MHC/weights.hm3_noMHC. \
+--intercept-gencov 0,0,0 \
+--M 1187349 \
+--samp-prev nan,0.329888,0.010832,0.012595 \
+--pop-prev nan,0.05,0.010832,0.012595 
+
+Beginning analysis at Fri Oct 16 13:42:12 2026
+Analysis finished at Fri Oct 16 13:42:12 2026
+Total time elapsed: 0.0s

@@ -1,0 +1,66 @@
+*********************************************************************
+* LD Score Regression (LDSC)
+* Version 2.0.0
+* (C) 2014-2019 Brendan Bulik-Sullivan and Hilary Finucane
+* Broad Institute of MIT and Harvard / MIT Department of Mathematics
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./ldsc.py \
+--out /home/claude/rg_work/ldsc_out/rg_Ghodsian_vs_Fairfield \
+--rg /home/claude/rg_work/munged/Ghodsian.sumstats.gz,/home/claude/rg_work/munged/Fairfield.sumstats.gz \
+--ref-ld-chr /home/claude/rg_work/ref/1000G_Phase3_weights_hm3_no_MHC/weights.hm3_noMHC. \
+--w-ld-chr /home/claude/rg_work/ref/1000G_Phase3_weights_hm3_no_MHC/weights.hm3_noMHC. \
+--M 1187349 
+
+Beginning analysis at Fri Oct 16 13:30:59 2026
+Reading summary statistics from /home/claude/rg_work/munged/Ghodsian.sumstats.gz ...
+Read summary statistics for 1128949 SNPs.
+Reading reference panel LD Score from /home/claude/rg_work/ref/1000G_Phase3_weights_hm3_no_MHC/weights.hm3_noMHC.[1-22] ... (ldscore_fromlist)
+Read reference panel LD Scores for 1187349 SNPs.
+Removing partitioned LD Scores with zero variance.
+Reading regression weight LD Score from /home/claude/rg_work/ref/1000G_Phase3_weights_hm3_no_MHC/weights.hm3_noMHC.[1-22] ... (ldscore_fromlist)
+Read regression weight LD Scores for 1187349 SNPs.
+After merging with reference panel LD, 1128949 SNPs remain.
+After merging with regression SNP LD, 1128949 SNPs remain.
+Computing rg for phenotype 2/2
+Reading summary statistics from /home/claude/rg_work/munged/Fairfield.sumstats.gz ...
+Read summary statistics for 1187349 SNPs.
+After merging with summary statistics, 1128949 SNPs remain.
+1115923 SNPs with valid alleles.
+
+Heritability of phenotype 1
+---------------------------
+Total Observed scale h2: 0.0018 (0.0007)
+Lambda GC: 1.0285
+Mean Chi^2: 1.031
+Intercept: 1.006 (0.0078)
+Ratio: 0.1927 (0.2518)
+
+Heritability of phenotype 2/2
+-----------------------------
+Total Observed scale h2: 0.0118 (0.0016)
+Lambda GC: 1.0649
+Mean Chi^2: 1.079
+Intercept: 0.9998 (0.0073)
+Ratio < 0 (usually indicates GC correction).
+
+Genetic Covariance
+------------------
+Total Observed scale gencov: 0.0048 (0.0009)
+Mean z1*z2: 0.3705
+Intercept: 0.3245 (0.0061)
+
+Genetic Correlation
+-------------------
+Genetic Correlation: 1.0359 (0.1617)
+Z-score: 6.4063
+P: 1.4907e-10
+
+
+Summary of Genetic Correlation Results
+                                              p1                                                p2     rg     se      z          p  h2_obs  h2_obs_se  h2_int  h2_int_se  gcov_int  gcov_int_se
+/home/claude/rg_work/munged/Ghodsian.sumstats.gz /home/claude/rg_work/munged/Fairfield.sumstats.gz 1.0359 0.1617 6.4063 1.4907e-10  0.0118     0.0016  0.9998     0.0073    0.3245       0.0061
+
+Analysis finished at Fri Oct 16 13:31:11 2026
+Total time elapsed: 11.07s

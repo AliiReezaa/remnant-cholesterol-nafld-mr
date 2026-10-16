@@ -1,0 +1,32 @@
+Traceback (most recent call last):
+  File "/home/claude/remnant-cholesterol-nafld-mr/genetic_correlation/code/01_prep_sumstats.py", line 33, in <module>
+    for n in (sys.argv[1:] or SPEC): run(n)
+                                     ^^^^^^
+  File "/home/claude/remnant-cholesterol-nafld-mr/genetic_correlation/code/01_prep_sumstats.py", line 17, in run
+    for ch in pd.read_csv(f'{S}/{sp["f"]}',sep='\t',usecols=sp['cols']+(['info'] if name=='Fairfield' else []),chunksize=1_000_000,dtype={'variant_id':str,'effect_allele':str,'other_allele':str}):
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/ldsc_env/lib/python3.11/site-packages/pandas/util/_decorators.py", line 211, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/ldsc_env/lib/python3.11/site-packages/pandas/util/_decorators.py", line 331, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/ldsc_env/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 950, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/ldsc_env/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 605, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/ldsc_env/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1442, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/ldsc_env/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1753, in _make_engine
+    return mapping[engine](f, **self.options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/ldsc_env/lib/python3.11/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 135, in __init__
+    self._validate_usecols_names(usecols, self.orig_names)
+  File "/home/claude/ldsc_env/lib/python3.11/site-packages/pandas/io/parsers/base_parser.py", line 917, in _validate_usecols_names
+    raise ValueError(
+ValueError: Usecols do not match columns, columns expected but not found: ['info']
+RC: rows read 11,665,681; rs-ID rows with valid beta/SE/P kept 11,665,673; unique SNP 11,643,187
+Fairfield: rows read 9,211,209; rs-ID rows with valid beta/SE/P kept 9,211,209; unique SNP 9,200,103

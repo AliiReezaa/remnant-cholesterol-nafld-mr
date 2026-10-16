@@ -1,0 +1,3 @@
+127a128,129
+>     if compression == 'gzip':  # PATCH (py3 port bug): gzip.open defaults to bytes mode
+>         return [x.rstrip('\n') for x in gzip.open(fh, 'rt').readline().split()]

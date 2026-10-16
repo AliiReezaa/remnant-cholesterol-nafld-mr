@@ -1,0 +1,3 @@
+ac29686ffd5b6378789857a522ebca77  1000G_Phase3_frq.tgz
+e4352ccf778f296835d73985350a863b  1000G_Phase3_ldscores.tgz
+a98ac0f089ee285177544a3e6e721ca3  1000G_Phase3_weights_hm3_no_MHC.tgz
