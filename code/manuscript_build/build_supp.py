@@ -1,18 +1,23 @@
 import sys; sys.path.insert(0,'.')
 from lib import *; from data import *
 import pandas as pd
-FIG='/home/claude/remnant-cholesterol-nafld-mr/results/figures_v2/'; OUT='/home/claude/remnant-cholesterol-nafld-mr/results/manuscript_v2/'
+FIG='/home/claude/remnant-cholesterol-nafld-mr/results/figures_v2/'; OUT='/home/claude/remnant-cholesterol-nafld-mr/results/manuscript/'
+import supp_blocks as SB, ast
+gi,fi,ni=g(G),g(F),g(N)
+def est(o,m='ivw',an='all SNPs',df=None,d=3):
+    r=g(o,m,an,df); return f"{r['OR']:.{d}f}, 95% CI: {r['lo']:.{d}f}–{r['hi']:.{d}f}, P = {pf(r['p'])}"
 D=Doc(10)
 D.para('Supplemental Digital Content',align='left',size=10,italic=True,after=2); D.rule()
 D.para('**Mendelian randomization study of remnant cholesterol in relation to non-alcoholic fatty liver disease**',align='left',size=17,after=6)
 D.para('Alireza Soleymani T, Mahdi Akbarzadeh, Danial Habibi',align='left',size=11,after=10)
-D.para('This document accompanies the main manuscript. It contains Supplemental Digital Content 1 (supplementary methods, run history and the STROBE-MR checklist) and Supplemental Digital Content 2 (supplementary tables S1–S12 and supplementary figures S1–S6). The complete tables, including all variant-level data, are in the Excel workbook Supplementary_Tables.xlsx (Supplemental Digital Content 3), and all code, console logs and intermediate files are in the public repository https://github.com/AliiReezaa/remnant-cholesterol-nafld-mr.',size=10)
+D.para('This document accompanies the main manuscript. Supplemental Digital Content 1 contains the supplementary methods (data provenance, instrument selection flow, formulas, harmonisation, estimator settings, validation, run history and software) and the STROBE-MR checklist. Supplemental Digital Content 2 contains supplementary tables S1 to S16, the supplementary results and supplementary figures S1 to S9. The complete tables, including all variant-level data, are in the Excel workbook Supplementary_Tables.xlsx (Supplemental Digital Content 3), and all code, console logs and intermediate files are in the public repository https://github.com/AliiReezaa/remnant-cholesterol-nafld-mr.',size=10)
 D.table(('Table of contents','Overview.'),['Item','Content'],[
- ['SDC 1, Part A','Supplementary methods 1–8: data provenance, instrument selection flow, formulas, harmonisation, MR-PRESSO and extended estimator settings, validation, run history, software'],
- ['SDC 1, Part B','STROBE-MR checklist with location in the manuscript'],
- ['SDC 2, Tables','S1 instruments; S2 harmonised variant data; S3 all MR estimates; S4 heterogeneity and pleiotropy; S5 leave-one-out; S6 proxies; S7 positive control; S8 extended estimators; S9 heterogeneity (I², Egger, NOME); S10 influence diagnostics; S11 radial outliers; S12 cross-dataset concordance'],
- ['SDC 2, Figures','S1 graphical abstract; S2–S3 diagnostics for Fairfield and FinnGen; S4 instrument strength, heterogeneity and influence; S5 radial MR; S6 positive-control diagnostics'],
- ['SDC 3','Supplementary_Tables.xlsx']],widths=[1.3,5.4],size=9)
+ ['SDC 1, Part A','Supplementary methods 1 to 15: data provenance, instrument selection flow, formulas, harmonisation, MR-PRESSO and extended estimator settings, validation, run history, software, diagnostics, extended estimators, concordance, power and overlap, positive control'],
+ ['SDC 1, Part B','STROBE-MR checklist with location in the main manuscript'],
+ ['SDC 2, Tables','S1 instruments; S2 harmonised variant data; S3 all MR estimates; S4 heterogeneity and pleiotropy; S5 leave-one-out; S6 proxies; S7 positive control (Python and R); S8 extended estimators; S9 heterogeneity (I², Egger, NOME); S10 influence diagnostics; S11 radial outliers; S12 cross-dataset concordance; S13 dataset and instrument characteristics; S14 diagnostics summary; S15 sensitivity analyses; S16 positive control summary'],
+ ['SDC 2, Supplementary results','Instrument characteristics and concordance; heterogeneity, pleiotropy and outliers; sensitivity analyses; extended estimators; power and overlap; positive control'],
+ ['SDC 2, Figures','S1 instrument architecture and concordance; S2 variant-level scatter plots; S3 power and precision; S4 and S5 diagnostics for Fairfield and FinnGen; S6 strength, heterogeneity and influence; S7 radial MR; S8 positive-control diagnostics; S9 graphical abstract'],
+ ['SDC 3','Supplementary_Tables.xlsx (all supplementary tables, sheets S1 to S12)']],widths=[1.4,5.3],size=9)
 D.h1('Supplemental Digital Content 1')
 D.h2('Part A. Supplementary methods')
 D.para('**1. Data sources and provenance.** All data are public summary statistics. Table SM1 lists each source, accession and the details recorded when the data were extracted. The CAD file was downloaded on 15 October 2026 from the GWAS Catalog FTP in its genome build 37 harmonised form (239,499,711 bytes, 9,455,778 variants) and its MD5 checksum (0d296695219d8f4867bee625ac031ff0) matched the checksum published by EMBL-EBI. Case and control counts for the CAD meta-analysis (60,801 and 123,504) were taken from the study README on the GRASP site and not from the paper text, which could not be retrieved, and should be checked against the paper before submission.')
@@ -32,21 +37,29 @@ D.para('**7. Run history.** Table SM2 lists every analysis run, including runs t
 D.table(('Table SM2','Run history of the analyses.'),['Run','Analysis','Software','Outcome / note'],[
  ['1','Primary NAFLD analysis, 52-variant set, three datasets','Python (custom TwoSampleMR-equivalent code)','Results reported in main text'],
  ['2','MR-PRESSO confirmation','R MRPRESSO 1.0, 10,000 simulations, seed 2026','Same outliers as Python; FinnGen corrected P .250 (R) vs .24 (Python); R values reported'],
- ['3','Sensitivity sets: APOE region excluded; earlier 48-variant set','Python','Reported in Table 4'],
+ ['3','Sensitivity sets: APOE region excluded; earlier 48-variant set','Python','Reported in Table 1 and Table S15'],
  ['4','Positive control (CAD), Python','Python','Reported (Table S7)'],
  ['5','Positive control, R run 1 (first run)','R 4.4.3, TwoSampleMR 0.6.22','Superseded: logging only; kept in repository'],
  ['6','Positive control, R run 2 (logged, unseeded)','R 4.4.3','Superseded: bootstrap standard errors for mode estimators varied between runs; kept in repository'],
- ['7','Positive control, R run 3 (final, seed 2026)','R 4.4.3','Reported in Table 6'],
- ['8','Extended estimators, influence, radial, I² (three datasets)','R 4.4.3; MendelianRandomization 0.10.0, mr.raps 0.2, RadialMR 1.2.1','Reported in Table 5 and Tables S8–S11'],
+ ['7','Positive control, R run 3 (final, seed 2026)','R 4.4.3','Reported in the main text and Table S16'],
+ ['8','Extended estimators, influence, radial, I² (three datasets)','R 4.4.3; MendelianRandomization 0.10.0, mr.raps 0.2, RadialMR 1.2.1','Reported in the main text and Tables S8–S11'],
  ['9','Manuscript figures and concordance statistics','Python 3 (matplotlib, scipy)','Script code/s13_manuscript_figures.py']],widths=[0.4,2.6,2.0,1.7],size=8)
 D.para('**8. Software.** Python 3 (numpy, pandas, scipy, matplotlib); R 4.4.3 (2025-02-28) with TwoSampleMR 0.6.22, MRPRESSO 1.0, MendelianRandomization 0.10.0, mr.raps 0.2 and RadialMR 1.2.1. The study was not pre-registered.')
+
+D.para('**9. Earlier instrument set.** '+SB.EARLIER48.replace('(48 variants, including five in the APOE region)','(48 variants listed, 41 to 48 available per dataset after harmonisation; five were in the APOE region)'))
+_n=9
+for kind,arg in SB.METH:
+    if kind=='h2':
+        _n+=1; _t=arg.split('. ',1)[1]; _ttl=_t
+    else:
+        D.para(f'**{_n}. {_ttl}.** '+arg.replace('listed under Code availability','listed at the start of this document'))
 D.h2('Part B. STROBE-MR checklist')
 chk=[
 ['1','Identify MR as the design in the title or abstract','Title; Abstract'],
 ['2','Background and rationale, including causal plausibility and why MR is suitable','1. Introduction'],
 ['3','Specific objectives and causal hypotheses','1. Introduction (final paragraph)'],
-['4a','Setting, design, underlying population, dates','2.1; Table 1'],
-['4b','Participants, eligibility, sample size, power calculations','2.1; 2.7; Table 1'],
+['4a','Setting, design, underlying population, dates','2.1; Fig. 1; Table S13'],
+['4b','Participants, eligibility, sample size, power calculations','2.1; 2.3; Table S13'],
 ['4c','Measurement, quality control and selection of genetic variants','2.2'],
 ['4d','Methods and diagnostic criteria for exposure and outcomes','2.1 (NMR remnant cholesterol; NAFLD case definitions of the source GWAS)'],
 ['4e','Ethics approval and consent','Information block; Acknowledgments (public summary data; no new approval)'],
@@ -54,29 +67,29 @@ chk=[
 ['6a–c','Quantitative variables, genetic variants and weights, estimator and covariates','2.1–2.3'],
 ['6d','Handling of missing data','2.2 (proxies, dropped variants)'],
 ['6e','Multiple testing','2.3 (no adjustment; one relation in three datasets)'],
-['7','Methods to assess the IV assumptions','2.2 (F, Steiger); 2.4; 2.8'],
-['8','Sensitivity and additional analyses','2.3–2.8'],
-['9a','Software, packages, versions, settings','2.9; SDC 1 Part A (8)'],
-['9b','Pre-registration','2.1 (not pre-registered)'],
-['10a','Numbers at each study stage and reasons for exclusion','2.2; Fig. 1; SDC 1 Part A (2)'],
-['10b','Summary statistics for exposure and outcomes','Table 1'],
+['7','Methods to assess the IV assumptions','2.2 (F, Steiger); 2.3; Part A (10, 14)'],
+['8','Sensitivity and additional analyses','2.2; 2.3; Part A (9–14)'],
+['9a','Software, packages, versions, settings','2.3 (last paragraph); Part A (8, 15)'],
+['9b','Pre-registration','2.1 (not pre-registered); 4. Discussion'],
+['10a','Numbers at each study stage and reasons for exclusion','2.2; 3.1; Fig. 1; Part A (2)'],
+['10b','Summary statistics for exposure and outcomes','2.1; Table S13'],
 ['10c','Heterogeneity across meta-analysed studies','Not applicable (summary statistics used as published)'],
-['10d','Similarity of variant–exposure associations across samples; overlapping individuals','Overlap: 2.7, 3.6. Similarity of exposure associations across samples was not tested separately (all samples European ancestry); stated as a limitation'],
-['11a','Variant–exposure and variant–outcome associations','Fig. 3, 4; Tables S1, S2'],
-['11b','MR estimates with uncertainty on an interpretable scale','3.1; Table 2; Fig. 2'],
+['10d','Similarity of variant–exposure associations across samples; overlapping individuals','Overlap: 2.1, 2.3, 3.1, 4. Similarity of exposure associations across samples was not tested separately (all samples European ancestry); stated as a limitation'],
+['11a','Variant–exposure and variant–outcome associations','Fig. 2; Figs. S1, S2; Tables S1, S2'],
+['11b','MR estimates with uncertainty on an interpretable scale','3.1; Table 1; Fig. 3'],
 ['11c','Absolute risk translation','Not done (null result)'],
-['11d','Plots (forest, scatter)','Fig. 2, 4, 5; Figs. S2, S3'],
-['12a, b','Assessment of assumptions; I², Q','3.3; Table 3; Tables S4, S9'],
-['13a, b','Robustness to assumption violations; other sensitivity analyses','3.4, 3.5; Tables 4, 5'],
+['11d','Plots (forest, scatter)','Figs. 2, 3; Figs. S2, S4, S5'],
+['12a, b','Assessment of assumptions; I², Q','3.1; Tables S4, S9, S14'],
+['13a, b','Robustness to assumption violations; other sensitivity analyses','3.1; Table 1; Tables S8, S15'],
 ['13c','Assessment of causal direction (bidirectional MR)','Not done; Steiger filter used; stated as a limitation'],
 ['13d','Comparison with non-MR estimates','4. Discussion (published observational studies)'],
-['13e','Additional plots (leave-one-out)','Fig. 5C; Figs. S2, S3'],
+['13e','Additional plots (leave-one-out)','Fig. 2C; Figs. S4, S5'],
 ['14','Key results with reference to objectives','4. Discussion (first paragraph)'],
-['15','Limitations: IV assumptions, bias, imprecision','4. Discussion (limitations paragraph)'],
-['16a–c','Cautious interpretation, mechanisms, clinical relevance','4. Discussion; 5. Conclusion'],
-['17','Generalizability','4. Discussion (seventh limitation)'],
+['15','Limitations: IV assumptions, bias, imprecision','4. Discussion (limitations paragraphs)'],
+['16a–c','Cautious interpretation, mechanisms, clinical relevance','4. Discussion (first, third and last paragraphs)'],
+['17','Generalizability','4. Discussion (sixth limitation)'],
 ['18','Funding','Information block'],
-['19','Data and code sharing','Data and code availability'],
+['19','Data and code sharing','Information block (GitHub repository)'],
 ['20','Conflicts of interest','Information block']]
 D.table(('Table SM3','STROBE-MR checklist (item wording paraphrased).'),['Item','Recommendation','Location'],chk,widths=[0.55,3.4,2.8],size=8)
 D.pagebreak()
@@ -95,7 +108,7 @@ for o in (G,F,N):
     for an in ['all SNPs','Steiger-filtered','MR-PRESSO outliers removed']:
         for m in ['ivw','egger','wm','sm','wmo']:
             r=g(o,m,an); rr.append([NAME[o],an,{'ivw':'IVW','egger':'MR-Egger','wm':'Weighted median','sm':'Simple mode','wmo':'Weighted mode'}[m],r['n'],f"{r['OR']:.3f}",f"{r['lo']:.3f}–{r['hi']:.3f}",pf(r['p'])])
-D.table(('Table S3','All MR estimates for the primary 52-variant set (Python), by analysis set and method.'),['Dataset','Analysis set','Method','SNPs','OR','95% CI','P'],rr,widths=[0.8,1.7,1.2,0.5,0.6,1.1,0.8],size=7.5,note='The MR-PRESSO-corrected IVW estimates reported in the main text (R package) are in Table 4. Estimates for the APOE-excluded and earlier 48-variant sets are in Supplementary_Tables.xlsx and the repository.')
+D.table(('Table S3','All MR estimates for the primary 52-variant set (Python), by analysis set and method.'),['Dataset','Analysis set','Method','SNPs','OR','95% CI','P'],rr,widths=[0.8,1.7,1.2,0.5,0.6,1.1,0.8],size=7.5,note='The MR-PRESSO-corrected IVW estimates reported in the main text (R package) are in Table 1. Estimates for the APOE-excluded and earlier 48-variant sets are in Supplementary_Tables.xlsx and the repository.')
 # S4
 s4=[]
 for ds,o in DS.items():
@@ -121,7 +134,7 @@ for r in ext.itertuples():
 D.table(('Table S8','Extended estimators for all datasets.'),['Dataset','Estimator','SNPs','OR','95% CI','P','Note'],rows,widths=[0.7,2.0,0.4,0.55,1.0,0.6,1.5],size=7,note='The contamination mixture model does not provide a P value; its interval is a likelihood-based confidence interval. MR-Lasso and the contamination mixture model also report the number of variants judged valid.')
 # S9 I2
 rows=[[ds,int(h.nsnp),f"{h.Q_IVW:.1f}",f"{100*h.I2_IVW:.1f}",f"{h.Q_Egger:.1f}",f"{100*h.I2_GX:.2f}",f"{h.Egger_intercept:.4f} ({h.Egger_intercept_se:.4f})",pf(h.Egger_intercept_p),f"{h.phi_random_effects:.2f}"] for ds,h in het.iterrows()]
-D.table(('Table S9','Heterogeneity, I² and no-measurement-error (NOME) statistics.'),['Dataset','SNPs','Q IVW','I² (%)','Q Egger','I²~~GX~~ (%)','Egger intercept (SE)','P','φ'],rows,widths=[0.8,0.45,0.6,0.55,0.65,0.7,1.3,0.5,0.45],size=8,note='φ = multiplicative random-effects residual standard error (values above 1 indicate overdispersion). These values come from the R run (MendelianRandomization package), which tests the Egger intercept against a normal distribution; Table 3 gives the t-distribution P values from the primary analysis (.261, .118 and .952). The conclusion is the same.')
+D.table(('Table S9','Heterogeneity, I² and no-measurement-error (NOME) statistics.'),['Dataset','SNPs','Q IVW','I² (%)','Q Egger','I²~~GX~~ (%)','Egger intercept (SE)','P','φ'],rows,widths=[0.8,0.45,0.6,0.55,0.65,0.7,1.3,0.5,0.45],size=8,note='φ = multiplicative random-effects residual standard error (values above 1 indicate overdispersion). These values come from the R run (MendelianRandomization package), which tests the Egger intercept against a normal distribution; Tables S4 and S14 give the t-distribution P values from the primary analysis (.261, .118 and .952). The conclusion is the same.')
 # S10 influence
 fl=infl[infl.cooks_d>infl.cook_threshold_4_over_n].sort_values(['dataset','cooks_d'],ascending=[True,False])
 D.table(('Table S10','Variants exceeding the Cook’s distance threshold (4/n).'),['Dataset','SNP',"Cook’s distance",'Studentized residual','Leverage','Threshold'],[[r.dataset,r.SNP,f"{r.cooks_d:.3f}",f"{r.student_resid:.2f}",f"{r.hat:.3f}",f"{r.cook_threshold_4_over_n:.3f}"] for r in fl.itertuples()],widths=[0.9,1.2,1.0,1.2,0.8,0.8],size=8,note='Full diagnostics for all variants are in Supplementary_Tables.xlsx.')
@@ -132,13 +145,52 @@ for ds in DS:
 D.table(('Table S11','Radial MR outliers.'),['Dataset','Outliers','Variants'],rows,widths=[0.9,0.7,5.1],size=8)
 # S12 concordance
 D.table(('Table S12','Cross-dataset concordance of single-variant Wald ratios.'),['Pair','Variants','Spearman ρ','P','Same sign (%)'],[[f"{r.a} vs {r.b}",r.n,f"{r.spearman:.3f}",pf(r.p),f"{100*r.sign_concordance:.1f}"] for r in conc.itertuples()],widths=[2.8,0.8,0.9,0.9,1.0],size=8,note='Datasets share participants, so concordance is expected to exceed that of independent replications.')
+
+# ---------- supplementary results (text and tables moved from the main manuscript) ----------
+class _W:
+    def __init__(self,real): self.r=real; self.n=13
+    def __getattr__(self,a): return getattr(self.r,a)
+    def h2(self,t): self.r.para('**'+t.split('. ',1)[1]+'**',align='left',after=2,keep=True)
+    def table(self,title,*a,**k):
+        if title.startswith('Odds ratio of NAFLD per 1-SD higher genetically predicted remnant cholesterol from extended'): return
+        lab=f'Table S{self.n}'; self.n+=1; return self.r.table((lab,title),*a,**k)
+    def figure(self,*a,**k): return None
+_REPL=[('Table 6 and Fig. 7','Table S16 and Figure 4 of the main text'),('Table 3','Table S14'),('Table 4','Table S15'),('Table 6','Table S16'),
+ ('Table 5 and Fig. 2','Table S8 and Figure 3 of the main text'),('(Fig. S4A)','(Figure S6A)'),('are shown in Fig. 3.','are shown in Figure S1.'),
+ ('(Fig. 4, Fig. 5 and Fig. S5)','(Figure 2 of the main text and Figures S2, S6 and S7)'),('(Fig. S4C)','(Figure S6C)'),
+ ('Fig. 5C and Figs. S2–S3','Figure 2C of the main text and Figures S4 and S5'),('Fig. 6)','Figure S3)'),
+ ('The 52 independent variants jointly explained {100*S[G][\'R2\']:.1f}% of the variance in RC, with a mean F statistic of','The 52 independent variants jointly explained 6.5% of the variance in RC (6.2% for the 48 variants retained in the Ghodsian and FinnGen data); the mean F statistic in the Ghodsian data was'),
+ ('and an overall F statistic of {S[G][\'F_overall\']:.0f}; every','and the overall F statistic was {S[G][\'F_overall\']:.0f}; every'),
+ ('IVW estimates in sensitivity analyses.','IVW estimates in sensitivity analyses.'),
+ ('(Supplemental Digital Content 2, Table S7)','(Table S7)'),('Supplemental Digital Content 2 (Figs. S2 and S3)','Figures S4 and S5'),
+ ('section 2.2','Supplementary method 9'),('IVW with F ≥ 30 and with MAF ≥ 0.01 are in Table 4 and Supplemental Digital Content 2.','')]
+def _run(code,drop_figs=True):
+    t=ast.parse(code); out=[]
+    for n in t.body:
+        seg=ast.get_source_segment(code,n)
+        if isinstance(n,ast.Expr) and isinstance(n.value,ast.Call) and getattr(n.value.func,'attr','')=='figure': continue
+        for a,b in _REPL: seg=seg.replace(a,b)
+        out.append(seg)
+    return '\n'.join(out)
+_real=D; _w=_W(_real)
+_g=globals(); _g['D']=_w
+D=_w
+exec(_run(SB.CHARS),_g)
+D.h2('0. Results')  if False else None
+D.r.para('**Supplementary results.** The text below gives the analyses that are summarized in section 3.1 of the main manuscript. Table S13 gives the characteristics of the datasets and instruments.',size=10)
+exec(_run(SB.RES),_g)
+D=_real
 D.h2('Supplementary figures')
-D.figure(FIG+'graphical_abstract.png','Graphical abstract.','Fifty-two genetic instruments for remnant cholesterol were tested against three NAFLD datasets (null) and against coronary artery disease as a positive control (strong association).',width=6.4,label='Figure S1')
-D.figure(FIG+'figS_diagnostics_Fairfield.png','Diagnostics for remnant cholesterol and NAFLD in the Fairfield (UK Biobank) dataset.','Panel A: scatter plot with IVW, MR-Egger, weighted median and weighted mode fits; panel B: funnel plot; panel C: leave-one-out; panel D: single-variant forest plot.',width=5.8,label='Figure S2')
-D.figure(FIG+'figS_diagnostics_FinnGen.png','Diagnostics for remnant cholesterol and NAFLD in the FinnGen release 5 dataset.','Panels as in Fig. S2. The wide intervals reflect the small number of cases (894).',width=5.8,label='Figure S3')
-D.figure(FIG+'fig9_strength_heterogeneity_influence.png','Instrument strength, heterogeneity and influence.','Panel A: distribution of per-variant F statistics (dashed line: F = 10). Panel B: I² of the IVW estimate and I²~~GX~~ of the MR-Egger framework in each dataset. Panel C: studentized residuals against Cook’s distance (dashed line: 4/n); the points above the line are rs58542926 (TM6SF2) and rs112875651 (TRIB1) in all datasets.',width=6.6,label='Figure S4')
-D.figure(FIG+'fig8_radial.png','Radial MR plots.','Each point is a variant plotted by inverse-standard-error weight and weighted ratio estimate; the line is the radial IVW estimate and crosses mark variants flagged as outliers.',width=6.6,label='Figure S5')
-D.figure(FIG+'figS_diagnostics_positive_control.png','Diagnostics for the positive control (remnant cholesterol and coronary artery disease).','Panel A: scatter plot (circled points are MR-PRESSO outliers in the Python analysis); panel B: funnel plot; panel C: leave-one-out analysis, in which no single omission removes the association; panel D: single-variant forest plot.',width=5.8,label='Figure S6')
+
+D.figure(FIG+'fig5_variants_heatmap.png','Instrument architecture and concordance across the three NAFLD datasets.','Panel A: effect of each of the 52 variants on remnant cholesterol (SD per allele, RC-increasing orientation). Panel B: z score of the single-variant Wald ratio in each dataset; red indicates that the RC-raising allele is associated with higher NAFLD risk and grey cells indicate variants that were not available. The scale saturates at |z| = 3.',width=6.0,label='Figure S1')
+D.figure(FIG+'fig3_scatter_all.png','Variant-level associations with remnant cholesterol and NAFLD in the three datasets.','Alleles are aligned to the RC-raising allele. Grey bars are 95% confidence intervals, the solid line is the IVW estimate, the dashed line is the MR-Egger fit and the dotted line is the weighted median. Circled points are MR-PRESSO outliers; the TM6SF2 variant lies far below the regression line in all three datasets.',width=6.6,label='Figure S2')
+D.figure(FIG+'fig6_power.png','Statistical power and precision of the three outcome datasets.','Panel A: power to detect a given true odds ratio per 1-SD higher remnant cholesterol, computed from the observed IVW standard errors; the dashed line marks 80% power. Panel B: IVW odds ratios with 95% confidence intervals against the number of cases (log scale).',width=6.4,label='Figure S3')
+D.figure(FIG+'figS_diagnostics_Fairfield.png','Diagnostics for remnant cholesterol and NAFLD in the Fairfield (UK Biobank) dataset.','Panel A: scatter plot with IVW, MR-Egger, weighted median and weighted mode fits; panel B: funnel plot; panel C: leave-one-out; panel D: single-variant forest plot.',width=5.6,label='Figure S4')
+D.figure(FIG+'figS_diagnostics_FinnGen.png','Diagnostics for remnant cholesterol and NAFLD in the FinnGen release 5 dataset.','Panels as in Figure S4. The wide intervals reflect the small number of cases (894).',width=5.6,label='Figure S5')
+D.figure(FIG+'fig9_strength_heterogeneity_influence.png','Instrument strength, heterogeneity and influence.','Panel A: distribution of per-variant F statistics (dashed line: F = 10). Panel B: I² of the IVW estimate and I²~~GX~~ of the MR-Egger framework in each dataset. Panel C: studentized residuals against Cook’s distance (dashed line: 4/n); the points above the line are rs58542926 (TM6SF2) and rs112875651 (TRIB1) in all datasets.',width=6.6,label='Figure S6')
+D.figure(FIG+'fig8_radial.png','Radial MR plots.','Each point is a variant plotted by inverse-standard-error weight and weighted ratio estimate; the line is the radial IVW estimate and crosses mark variants flagged as outliers.',width=6.6,label='Figure S7')
+D.figure(FIG+'figS_diagnostics_positive_control.png','Diagnostics for the positive control (remnant cholesterol and coronary artery disease).','Panel A: scatter plot (circled points are MR-PRESSO outliers in the Python analysis); panel B: funnel plot; panel C: leave-one-out analysis, in which no single omission removes the association; panel D: single-variant forest plot.',width=5.6,label='Figure S8')
+D.figure(FIG+'graphical_abstract.png','Graphical abstract.','Fifty-two genetic instruments for remnant cholesterol were tested against three NAFLD datasets (null) and against coronary artery disease as a positive control (strong association).',width=6.4,label='Figure S9')
 D.reflist('References (Supplemental Digital Content)') if D.order else None
 D.footer('Supplemental Digital Content • Soleymani T et al.')
-D.save(OUT+'RC_NAFLD_MR_supplementary_v2.docx'); print('ok',D.fig,D.tab)
+D.save(OUT+'RC_NAFLD_MR_supplementary.docx'); print('ok',D.fig,D.tab)

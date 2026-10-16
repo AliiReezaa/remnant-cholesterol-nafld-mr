@@ -16,6 +16,9 @@ To check instrument validity we tested the same 52 instruments against coronary 
 - Positive control outcome: GWAS Catalog GCST003116 (Nikpay et al. 2015, coronary artery disease).
 - LD reference: 1000 Genomes European panel (see `code/dl_ld.sh`).
 
+## Manuscript
+The manuscript and supplement (results/manuscript) are generated from the result files by `code/manuscript_build` (build_main.py, build_supp.py); figures by `code/s13_manuscript_figures.py` (results/figures_v2).
+
 ## Layout
 - `code/` analysis scripts (Python) and `run_mrpresso.R` (R MR-PRESSO confirmation).
 - `analysis/` harmonised data, MR results and leave-one-out output for the primary 52-variant set, the no-APOE sensitivity set and the original 48-variant set.

@@ -28,6 +28,7 @@ class Doc:
         return '['+','.join(out)+']'
     def runs(s,p,text,size=None,bold=False,italic=False,color=None):
         """markup: {k1,k2} citation (superscript), **bold**, _italic_ via ^^x^^ for superscript, ~~x~~ subscript"""
+        text=re.sub(r'(?:^|(?<=[\s(\[;,]))-(?=\d)','\u2212',text)
         tokens=re.split(r'(\{[A-Za-z0-9,]+\}|\*\*.+?\*\*|\^\^.+?\^\^|~~.+?~~|__.+?__)',text)
         for t in tokens:
             if not t: continue
