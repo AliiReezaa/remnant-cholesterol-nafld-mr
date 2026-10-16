@@ -11,6 +11,7 @@ Pipeline (run in this order, all logs in `logs/`):
 - `05_benchmark_glgc.sh`  external benchmark with GLGC (Willer 2013) TG and LDL against CAD.
 - `06_sensitivity.sh`, `08_bulk_vs_loci.sh`  alternative LDSC settings and a bulk-genome analysis.
 - `07_collect.py`  parses all LDSC logs into `results/*.csv`.
+- `R/Genetic_correlation_RC_NAFLD_full_pipeline.R`  the whole analysis in one R script for RStudio (downloads with MD5 checks, munging, h2, rg, sensitivity, GLGC benchmark, bulk vs loci, self-tests, independent cross-check, instrument composition). It is an R port of the official LDSC code and reproduces all 36 rg values and 4 h2 values of the Python run (largest difference 0.00005, official values are rounded to 4 decimals). A console log and CSV outputs of one complete run are in `R/example_output/`.
 
 Software: LDSC 2.0.1 (PyPI port of bulik/ldsc, Python 3.11, numpy 1.26.4, pandas 1.5.3, scipy 1.11.4). The port failed to read gzipped headers in `munge_sumstats.py`; the one-line fix is in `provenance/munge_sumstats_py3_gzip_patch.diff`.
 Checks: self-comparison tests (same data with swapped alleles, other strand, negated) return rg = +1, +1, +1, -1; the independent implementation reproduces ldsc.py; GLGC TG and LDL give the expected positive rg with CAD.
