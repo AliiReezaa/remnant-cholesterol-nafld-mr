@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 280" width="1200" height="280">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1a1f"/><stop offset="1" stop-color="#10302d"/></linearGradient>
+<style>.h{font:800 40px Inter,Segoe UI,Helvetica,Arial,sans-serif;fill:#f1f6f5;letter-spacing:-1px}.s{font:600 14px Inter,Segoe UI,Arial,sans-serif;fill:#4cc3b8;letter-spacing:2.5px}.b{font:800 22px Inter,Arial,sans-serif;fill:#fff}.u{font:700 16px Inter,Arial,sans-serif;fill:#ffffffcc}.f{font:400 16px Georgia,serif;fill:#a9bcba}</style></defs>
+<rect width="1200" height="280" rx="20" fill="url(#g)"/><text x="58" y="62" class="s">TWO-SAMPLE MENDELIAN RANDOMIZATION</text><text x="56" y="108" class="h">Remnant cholesterol and fatty</text><text x="56" y="158" class="h">liver disease</text>
+<text x="58" y="220" class="f">A. R. Soleymani Taloubaghi · github.com/AliiReezaa</text><g transform="translate(760,70)"><g stroke="#ffffff55" stroke-width="3" fill="none">
+<path d="M70 95 H150"/><path d="M230 95 H300" stroke-dasharray="8 6"/><path d="M190 40 V70"/><path d="M215 35 Q300 40 330 72"/></g>
+<rect x="0" y="72" width="70" height="46" rx="12" fill="#c2552b"/><text x="35" y="102" text-anchor="middle" class="b">G</text>
+<rect x="150" y="72" width="80" height="46" rx="12" fill="#0f6e6a"/><text x="190" y="102" text-anchor="middle" class="b">X</text>
+<rect x="300" y="72" width="80" height="46" rx="12" fill="#ffffff"/><text x="340" y="102" text-anchor="middle" class="b" fill="#0b1a1f">Y</text>
+<rect x="160" y="0" width="60" height="38" rx="19" fill="none" stroke="#ffffff88" stroke-width="2"/><text x="190" y="25" text-anchor="middle" class="u">U</text></g></svg>
